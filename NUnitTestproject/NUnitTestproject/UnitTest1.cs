@@ -22,5 +22,10 @@ namespace NUnitTestproject
         {
             Console.WriteLine("My first branch-another commit");
         }
+        [Test]
+        public void AddNewTest3()
+        {
+            Console.WriteLine("My 2 branch-conflicts");
+        }
     }
 }
