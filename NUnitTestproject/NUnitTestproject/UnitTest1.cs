@@ -22,5 +22,10 @@ namespace NUnitTestproject
         {
             Console.WriteLine("My first branch-another commit");
         }
+        [Test]
+        public void AddNewTest2()
+        {
+            Console.WriteLine("main - stashing");
+        }
     }
 }
