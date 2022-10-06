@@ -47,6 +47,11 @@ namespace NUnitTestproject
         {
             Console.WriteLine("My 6 branch- rebasing");
         }
+        [Test]
+        public void AddNewTest7()
+        {
+            Console.WriteLine("My 7 branch- add a bug - amend");
+        }
     }
 
 }
