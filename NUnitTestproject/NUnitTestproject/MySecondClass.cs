@@ -15,5 +15,10 @@ namespace NUnitTestproject
         {
             Assert.AreEqual(5, _isATest);
         }
+        [Test]
+        public void Test6()
+        {
+            Console.WriteLine("rebasing");
+        }
     }
 }
