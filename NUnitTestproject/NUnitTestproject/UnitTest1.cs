@@ -17,5 +17,10 @@ namespace NUnitTestproject
         {
             Console.WriteLine("My first branch");
         }
+        [Test]
+        public void AddNewTest1()
+        {
+            Console.WriteLine("My first branch-another commit");
+        }
     }
 }
