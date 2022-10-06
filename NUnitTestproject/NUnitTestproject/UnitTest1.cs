@@ -12,5 +12,10 @@ namespace NUnitTestproject
         {
             Assert.Pass();
         }
+        [Test]
+        public void AddNewTest()
+        {
+            Console.WriteLine("My first branch");
+        }
     }
 }
