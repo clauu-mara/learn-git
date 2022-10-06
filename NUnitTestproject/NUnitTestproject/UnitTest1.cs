@@ -37,6 +37,11 @@ namespace NUnitTestproject
         {
             Console.WriteLine("My 4 branch- branching");
         }
+        [Test]
+        public void AddNewTest5()
+        {
+            Console.WriteLine("My 5 branch- merging- diverged branches");
+        }
     }
 
 }
