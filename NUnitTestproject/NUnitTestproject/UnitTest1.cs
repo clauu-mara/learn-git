@@ -32,6 +32,11 @@ namespace NUnitTestproject
         {
             Console.WriteLine("My 3 branch- fetching and merging");
         }
+        [Test]
+        public void AddNewTest4a()
+        {
+            Console.WriteLine("My 4 branch- branching");
+        }
     }
 
 }
