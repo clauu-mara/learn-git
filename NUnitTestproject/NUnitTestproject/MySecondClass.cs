@@ -20,5 +20,11 @@ namespace NUnitTestproject
         {
             Console.WriteLine("rebasing");
         }
+        [Test]
+        public void Test6r()
+        {
+            Console.WriteLine("rebasing ");
+        }
+
     }
 }
