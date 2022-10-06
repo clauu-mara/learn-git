@@ -27,5 +27,11 @@ namespace NUnitTestproject
         {
             Console.WriteLine("My 2 branch-conflicts");
         }
+        [Test]
+        public void AddNewTest4()
+        {
+            Console.WriteLine("My 3 branch- fetching and merging");
+        }
     }
+
 }
