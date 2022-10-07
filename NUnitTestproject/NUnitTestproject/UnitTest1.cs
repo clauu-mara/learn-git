@@ -53,6 +53,11 @@ namespace NUnitTestproject
             Console.WriteLine("My 7 branch- add a bug - amend");
             Console.WriteLine("bug fix");
         }
+        [Test]
+        public void AddNewTest8()
+        {
+            Console.WriteLine("My 8 branch- resolve conflicts rebasing");
+        }
     }
 
 }
