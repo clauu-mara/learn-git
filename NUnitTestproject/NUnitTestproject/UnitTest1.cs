@@ -68,6 +68,11 @@ namespace NUnitTestproject
         {
             Console.WriteLine("My 9 branch- cherry picking");
         }
+        [Test]
+        public void AddNewTest9ch()
+        {
+            Console.WriteLine("My 9ch branch- cherry picking");
+        }
     }
 
 }
