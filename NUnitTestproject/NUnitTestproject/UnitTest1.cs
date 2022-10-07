@@ -63,6 +63,11 @@ namespace NUnitTestproject
         {
             Console.WriteLine("My 8 branch- resolve conflicts rebasing");
         }
+        [Test]
+        public void AddNewTest9()
+        {
+            Console.WriteLine("My 9 branch- cherry picking");
+        }
     }
 
 }
