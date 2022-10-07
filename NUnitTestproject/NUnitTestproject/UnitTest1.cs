@@ -76,7 +76,7 @@ namespace NUnitTestproject
         [Test]
         public void AddNewTestAmend()
         {
-            Console.WriteLine("bug");
+            Console.WriteLine("fixed");
         }
     }
 
