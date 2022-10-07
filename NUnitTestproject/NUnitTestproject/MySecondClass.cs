@@ -25,6 +25,12 @@ namespace NUnitTestproject
         {
             Console.WriteLine("rebasing ");
         }
+        [Test]
+        public void Test9()
+        {
+            Console.WriteLine("cherry picking ");
+        }
+
 
     }
 }
