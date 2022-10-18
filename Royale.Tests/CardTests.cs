@@ -1,4 +1,5 @@
 using Framework.Models;
+using Framework.Services;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using Royale.Pages;
@@ -44,18 +45,25 @@ public class CardTests
        Assert.AreEqual("Arena 8", cardArena);
        Assert.AreEqual("Common", cardRarity);
     }
-     [Test]
-    public void MirrorHeadersAreCorrectOnCardDetailsPageTest()
+    // these are NUnit attributes
+    // these tests are running one by one => we want them to run in parallel
+    //refactoring -> this test method is now 2 test cases
+     static string[] cardNames={"Ice Spirit", "Mirror"};
+
+     [Test,Category("Cards")] // to can filter tests when running them
+     [TestCaseSource("cardNames")]
+     [Parallelizable(ParallelScope.Children)]// because we have a caseSource and we split up tests to run in parallel/ concurrently
+    public void MirrorHeadersAreCorrectOnCardDetailsPageTest(string cardName)
     {
-       new CardsPage(driver).GoTo().GetCardByName("Mirror").Click();
+       new CardsPage(driver).GoTo().GetCardByName(cardName).Click();
        var cardDetails = new CardDetailsPage(driver);
 
-       var card = cardDetails.GetBaseCard();
-       var mirror = new MirrorCard();
+       var cardOnPage = cardDetails.GetBaseCard();
+       var card = new InMemoryCardService().GetCardByName(cardName);
 
-       Assert.AreEqual(mirror.Name,card.Name);
-       Assert.AreEqual(mirror.Type,card.Type);
-       Assert.AreEqual(mirror.Arena, card.Arena);
-       Assert.AreEqual(mirror.Rarity, card.Rarity);
+       Assert.AreEqual(card.Name,cardOnPage.Name);
+       Assert.AreEqual(card.Type,cardOnPage.Type);
+       Assert.AreEqual(card.Arena, cardOnPage.Arena);
+       Assert.AreEqual(card.Rarity, cardOnPage.Rarity);
     }
 }
