@@ -1,3 +1,4 @@
+using Framework.Models;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using Royale.Pages;
@@ -33,14 +34,28 @@ public class CardTests
     {
        new CardsPage(driver).GoTo().GetCardByName("Ice Spirit").Click();
        var cardDetails = new CardDetailsPage(driver);
-       
+
        var (cardCategory, cardArena) = cardDetails.GetCardCategory();
        var cardName = cardDetails.Map.CardName.Text;
        var cardRarity = cardDetails.Map.CardRarity.Text;
 
        Assert.AreEqual("Ice Spirit",cardName);
        Assert.AreEqual("Troop",cardCategory);
-       Assert.AreEqual("Arena", cardArena);
+       Assert.AreEqual("Arena 8", cardArena);
        Assert.AreEqual("Common", cardRarity);
+    }
+     [Test]
+    public void MirrorHeadersAreCorrectOnCardDetailsPageTest()
+    {
+       new CardsPage(driver).GoTo().GetCardByName("Mirror").Click();
+       var cardDetails = new CardDetailsPage(driver);
+
+       var card = cardDetails.GetBaseCard();
+       var mirror = new MirrorCard();
+
+       Assert.AreEqual(mirror.Name,card.Name);
+       Assert.AreEqual(mirror.Type,card.Type);
+       Assert.AreEqual(mirror.Arena, card.Arena);
+       Assert.AreEqual(mirror.Rarity, card.Rarity);
     }
 }
