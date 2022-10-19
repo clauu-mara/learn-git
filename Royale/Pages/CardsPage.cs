@@ -1,3 +1,4 @@
+using Framework.Selenium;
 using OpenQA.Selenium;
 
 namespace Royale.Pages 
@@ -5,9 +6,9 @@ namespace Royale.Pages
    public class CardsPage: PageBase
    {
        public readonly CardsPageMap Map;
-       public CardsPage(IWebDriver driver):base(driver)
+       public CardsPage()
        {
-         Map = new CardsPageMap(driver);
+         Map = new CardsPageMap();
        }
 
 //something unclear
@@ -28,13 +29,8 @@ namespace Royale.Pages
    }
    public class CardsPageMap
    {
-     IWebDriver _driver;
-     public CardsPageMap(IWebDriver driver)
-     {
-        _driver = driver;
-     }
      
-     public IWebElement Card(string name) => _driver.FindElement(By.CssSelector($"a[href='{name}']"));
+     public IWebElement Card(string name) => (IWebElement)Driver.FindElement(By.CssSelector($"a[href='{name}']"));
 
    }
 }

@@ -1,12 +1,13 @@
-﻿using OpenQA.Selenium;
+﻿using Framework.Selenium;
+using OpenQA.Selenium;
 
 namespace Royale;
 public class HeaderNav
 {
     public readonly HeaderNavMap Map;
-    public HeaderNav(IWebDriver driver)
+    public HeaderNav()
     {
-        Map = new HeaderNavMap(driver);
+        Map = new HeaderNavMap();
     }
   public void GoToCardsPage()
   {
@@ -15,10 +16,5 @@ public class HeaderNav
 }
 public class HeaderNavMap
 {
-    IWebDriver _driver;
-    public HeaderNavMap(IWebDriver driver)
-    {
-        _driver =driver;
-    }
-    public IWebElement CardsTabLink => _driver.FindElement(By.CssSelector("a[href='/cards']"));
+    public IWebElement CardsTabLink => (IWebElement)Driver.FindElement(By.CssSelector("a[href='/cards']"));
 }

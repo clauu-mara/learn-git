@@ -11,7 +11,7 @@ public class CardTests
     {
         Driver.Init(); //something unclear...
         Royale.Pages.Pages.Init();
-        Driver.Current.Url= "https://statsroyale.com";
+        Driver.GoTo("https://statsroyale.com");
     }
 
     [TearDown]

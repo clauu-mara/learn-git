@@ -1,4 +1,5 @@
 using Framework.Models;
+using Framework.Selenium;
 using OpenQA.Selenium;
 
 namespace Royale.Pages
@@ -6,9 +7,9 @@ namespace Royale.Pages
  public class CardDetailsPage: PageBase
  {
     public readonly CardDetailsPageMap Map;
-    public CardDetailsPage(IWebDriver driver): base(driver)
+    public CardDetailsPage()
     {
-        Map= new CardDetailsPageMap(driver);
+        Map= new CardDetailsPageMap();
     }
     public (string Category, string Arena) GetCardCategory()
     {
@@ -31,14 +32,9 @@ namespace Royale.Pages
  }
  public class CardDetailsPageMap
  {
-    IWebDriver _driver;
-    public CardDetailsPageMap(IWebDriver driver)
-    {
-        _driver=driver;
-    }
     //property?
-    public IWebElement CardName => _driver.FindElement(By.CssSelector("div[class*='cardName']"));
-    public IWebElement CardCategory => _driver.FindElement(By.CssSelector("div[class*='card__rarity']"));
-    public IWebElement CardRarity => _driver.FindElement(By.CssSelector("div[class*='card__count']"));
+    public IWebElement CardName => (IWebElement)Driver.FindElement(By.CssSelector("div[class*='cardName']"));
+    public IWebElement CardCategory => (IWebElement)Driver.FindElement(By.CssSelector("div[class*='card__rarity']"));
+    public IWebElement CardRarity => (IWebElement)Driver.FindElement(By.CssSelector("div[class*='card__count']"));
  }
 }
