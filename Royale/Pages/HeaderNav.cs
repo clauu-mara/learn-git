@@ -17,4 +17,5 @@ public class HeaderNav
 public class HeaderNavMap
 {
     public IWebElement CardsTabLink => (IWebElement)Driver.FindElement(By.CssSelector("a[href='/cards']"));
+    public IWebElement DeckBuilderLink =>  Driver.Current.FindElement(By.CssSelector("[href='/deckbuilder']"));
 }
