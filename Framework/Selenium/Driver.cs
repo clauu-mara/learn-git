@@ -7,47 +7,47 @@ namespace Framework.Selenium
     public static class Driver
     {
         [ThreadStatic] // read more about it
-        //means that the value of the static field (this case _driver) is unique for each thread => each thread would have its own instance of driver
-       private static IWebDriver _driver;
+                       //means that the value of the static field (this case _driver) is unique for each thread => each thread would have its own instance of driver
+        private static IWebDriver _driver;
 
-       [ThreadStatic]
-       public static Wait Wait;
-       
-       public static void Init()
-       {
-        FW.Log.Info("Browser: Chrome");
-         _driver= new ChromeDriver(Path.GetFullPath(@"../../../../"+"_drivers"));
-         Wait = new Wait(10);
-       }
+        [ThreadStatic]
+        public static Wait Wait;
 
-       //property -> current value of the _driver
-       public static IWebDriver Current => _driver ?? throw new NullReferenceException("driver is null");
+        public static void Init()
+        {
+            FW.Log.Info("Browser: Chrome");
+            _driver = new ChromeDriver(Path.GetFullPath(@"../../../../" + "_drivers"));
+            Wait = new Wait(10);
+        }
 
-       public static string Title => Current.Title; // now our driver has a TITLE property
+        //property -> current value of the _driver
+        public static IWebDriver Current => _driver ?? throw new NullReferenceException("driver is null");
 
-       public static void GoTo(string url)
-       {
-         if(!url.StartsWith("https"))
-         {
-           url = $"http//{url}";
-         }
+        public static string Title => Current.Title; // now our driver has a TITLE property
 
-         FW.Log.Info(url);
-         Current.Navigate().GoToUrl(url);
-       }
-       public static IWebDriver FindElement(By by)
-       {
-        return (IWebDriver)Current.FindElement(by);
-       }
-       public static IList<IWebDriver> FindElements(By by)
-       {
-        return (IList<IWebDriver>)Current.FindElements(by);
-       }
+        public static void GoTo(string url)
+        {
+            if (!url.StartsWith("https"))
+            {
+                url = $"http//{url}";
+            }
 
-       public static void Quit()
-       {
-        FW.Log.Info("Close Browser");
-        Current.Quit();
-       }
+            FW.Log.Info(url);
+            Current.Navigate().GoToUrl(url);
+        }
+        public static IWebDriver FindElement(By by)
+        {
+            return (IWebDriver)Current.FindElement(by);
+        }
+        public static IList<IWebDriver> FindElements(By by)
+        {
+            return (IList<IWebDriver>)Current.FindElements(by);
+        }
+
+        public static void Quit()
+        {
+            FW.Log.Info("Close Browser");
+            Current.Quit();
+        }
     }
 }

@@ -7,7 +7,7 @@ namespace Royale.Pages
         public HeaderNav HeaderNav;
         public PageBase()
         {
-            HeaderNav= new HeaderNav();
+            HeaderNav = new HeaderNav();
         }
     }
 }

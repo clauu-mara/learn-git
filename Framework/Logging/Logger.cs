@@ -4,10 +4,10 @@ namespace Framework.Logging
     {
         //?????
         private readonly string _filepath;
-        public Logger (string testName, string filepath)
+        public Logger(string testName, string filepath)
         {
             _filepath = filepath;
-            using(var log = File.CreateText(_filepath))
+            using (var log = File.CreateText(_filepath))
             {
                 log.WriteLine($"Starting timestamp: {DateTime.Now.ToLocalTime()}");
                 log.WriteLine($"Test: {testName}");
@@ -24,10 +24,10 @@ namespace Framework.Logging
 
         private void Write(string text)
         {
-           using(var log = File.AppendText(_filepath))
-           {
-            log.Write(text);
-           }
+            using (var log = File.AppendText(_filepath))
+            {
+                log.Write(text);
+            }
         }
 
         public void Info(string message)
@@ -35,7 +35,7 @@ namespace Framework.Logging
             WriteLine($"[INFO]:{message}");
         }
 
-       public void Step(string message)
+        public void Step(string message)
         {
             WriteLine($"   [STEP]:{message}");
         }

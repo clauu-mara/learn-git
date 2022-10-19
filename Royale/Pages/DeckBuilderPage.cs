@@ -4,7 +4,7 @@ using OpenQA.Selenium;
 
 namespace Royale.Pages
 {
-    public class DeckBuilderPage: PageBase
+    public class DeckBuilderPage : PageBase
     {
         //define map to access attributes inside it
         public readonly DeckBuilderPageMap Map;
@@ -14,9 +14,9 @@ namespace Royale.Pages
         }
         public DeckBuilderPage Goto()
         {
-          FW.Log.Step("Click Deck Builder Link");
-          HeaderNav.Map.DeckBuilderLink.Click();    
-          return this; // it is returning itself 
+            FW.Log.Step("Click Deck Builder Link");
+            HeaderNav.Map.DeckBuilderLink.Click();
+            return this; // it is returning itself 
         }
         // I am going to do methods for every selector I have 
         public void AddCardsManually()
@@ -24,11 +24,11 @@ namespace Royale.Pages
             Driver.Wait.Until(driver => Map.AddCardsManuallyLink.Displayed);
             FW.Log.Step("Click Add Cards Manually Link");
             //call map here
-             Map.AddCardsManuallyLink.Click();             
+            Map.AddCardsManuallyLink.Click();
         }
         public void CopyDeckIcon()
         {
-            Driver.Wait.Until(driver => Map.CopyDeckIconButton.Displayed);  
+            Driver.Wait.Until(driver => Map.CopyDeckIconButton.Displayed);
             FW.Log.Step("Click Copy Deck Icon");
             Map.CopyDeckIconButton.Click();
         }
