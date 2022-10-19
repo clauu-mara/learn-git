@@ -22,6 +22,8 @@ namespace Framework.Selenium
        //property -> current value of the _driver
        public static IWebDriver Current => _driver ?? throw new NullReferenceException("driver is null");
 
+       public static string Title => Current.Title; // now our driver has a TITLE property
+
        public static void GoTo(string url)
        {
          Debug.WriteLine(url);
@@ -34,6 +36,11 @@ namespace Framework.Selenium
        public static IList<IWebDriver> FindElements(By by)
        {
         return (IList<IWebDriver>)Current.FindElements(by);
+       }
+
+       public static void Quit()
+       {
+        Current.Quit();
        }
     }
 }

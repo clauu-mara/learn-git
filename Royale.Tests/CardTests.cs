@@ -18,7 +18,7 @@ public class CardTests
     [TearDown]
     public void AfterEach()
     {
-         Driver.Current.Quit();
+         Driver.Quit();
     }
 
     static IList<Card> apiCards = new ApiCardService().GetAllCards();
