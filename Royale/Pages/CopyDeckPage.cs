@@ -14,6 +14,7 @@ namespace Royale.Pages
         public void ClickOnYesButton()
         {
             Map.YesButton.Click();
+            Driver.Wait.Until(driver => Map.CopiedMessage.Displayed);
         }
         public bool CopiedMessageIsDisplayed()
         {

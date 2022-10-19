@@ -14,13 +14,15 @@ namespace Royale.Pages
         public DeckBuilderPage Goto()
         {
           HeaderNav.Map.DeckBuilderLink.Click();   
-          return this;
+          Driver.Wait.Until(driver => Map.AddCardsManuallyLink.Displayed);
+          return this; // it is returning itself 
         }
         // I am going to do methods for every selector I have 
         public void AddCardsManually()
         {
             //call map here
-             Map.AddCardsManuallyLink.Click();   
+             Map.AddCardsManuallyLink.Click(); 
+             Driver.Wait.Until(driver => Map.CopyDeckIconButton.Displayed);  
         }
         public void CopyDeckIcon()
         {
