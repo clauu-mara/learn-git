@@ -1,40 +1,36 @@
-using Framework.Models;
+using Framework.Selenium;
 using Framework.Services;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
 using Royale.Pages;
 
 namespace Royale.Tests;
 
 public class CardTests
 {
-    IWebDriver driver;
-
     [SetUp]
     public void BeforeEach()
     {
-       driver= new ChromeDriver(Path.GetFullPath(@"../../../../"+"_drivers"));
-       driver.Url= "https://statsroyale.com";
+        Driver.Init(); //something unclear...
+        Royale.Pages.Pages.Init();
+        Driver.Current.Url= "https://statsroyale.com";
     }
 
     [TearDown]
     public void AfterEach()
     {
-        driver.Quit();
+         Driver.Current.Quit();
     }
 
     [Test]
     public void IceSpiritIsOnCardsPageTest()
     {
-        var cardPage = new CardsPage(driver);
-        var iceSpiritCard = cardPage.GoTo().GetCardByName("Ice Spirit");
+        var iceSpiritCard = Royale.Pages.Pages.Cards.GoTo().GetCardByName("Ice Spirit");
         Assert.That(iceSpiritCard.Displayed);
     }
-    [Test]
+   /* [Test]
     public void IceSpiritHeadersAreCorrectOnCardDetailsPageTest()
     {
-       new CardsPage(driver).GoTo().GetCardByName("Ice Spirit").Click();
-       var cardDetails = new CardDetailsPage(driver);
+       new CardsPage( Driver.Current).GoTo().GetCardByName("Ice Spirit").Click();
+       var cardDetails = new CardDetailsPage( Driver.Current);
 
        var (cardCategory, cardArena) = cardDetails.GetCardCategory();
        var cardName = cardDetails.Map.CardName.Text;
@@ -47,18 +43,17 @@ public class CardTests
     }
     // these are NUnit attributes
     // these tests are running one by one => we want them to run in parallel
-    //refactoring -> this test method is now 2 test cases
+    //refactoring -> this test method is now 2 test cases */
      static string[] cardNames={"Ice Spirit", "Mirror"};
 
-     [Test,Category("Cards")] // to can filter tests when running them
+     [Test, Category("cards")] // to can filter tests when running them
      [TestCaseSource("cardNames")]
      [Parallelizable(ParallelScope.Children)]// because we have a caseSource and we split up tests to run in parallel/ concurrently
-    public void MirrorHeadersAreCorrectOnCardDetailsPageTest(string cardName)
+    public void CardHeadersAreCorrectOnCardDetailsPageTest(string cardName)
     {
-       new CardsPage(driver).GoTo().GetCardByName(cardName).Click();
-       var cardDetails = new CardDetailsPage(driver);
+       Royale.Pages.Pages.Cards.GoTo().GetCardByName(cardName).Click();
 
-       var cardOnPage = cardDetails.GetBaseCard();
+       var cardOnPage = Royale.Pages.Pages.CardDetails.GetBaseCard();
        var card = new InMemoryCardService().GetCardByName(cardName);
 
        Assert.AreEqual(card.Name,cardOnPage.Name);
@@ -66,4 +61,8 @@ public class CardTests
        Assert.AreEqual(card.Arena, cardOnPage.Arena);
        Assert.AreEqual(card.Rarity, cardOnPage.Rarity);
     }
+    // tests are failing
+    // 2 tests cannot run in parallel using the same instance of webdriver => using a static/global webdriver in every test is not so fun 
+    // => but there is a solution: using multiple instances of webdriver being able to use it like a static driver
+    // verify why my tests are not passing
 }
