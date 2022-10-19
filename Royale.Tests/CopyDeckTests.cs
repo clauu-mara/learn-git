@@ -24,6 +24,7 @@ namespace Royale.Tests
     {
         var wait = new WebDriverWait(Driver.Current, TimeSpan.FromSeconds(10));
         Royale.Pages.Pages.DeckBuilder.Goto();
+        Driver.Wait.Until(driver => Royale.Pages.Pages.DeckBuilder.Map.AddCardsManuallyLink.Displayed);
         Royale.Pages.Pages.DeckBuilder.AddCardsManually();
         Driver.Wait.Until(driver => Royale.Pages.Pages.DeckBuilder.Map.CopyDeckIconButton.Displayed);
 
