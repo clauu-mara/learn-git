@@ -25,15 +25,15 @@ namespace Royale.Tests
         var wait = new WebDriverWait(Driver.Current, TimeSpan.FromSeconds(10));
         Royale.Pages.Pages.DeckBuilder.Goto();
         Royale.Pages.Pages.DeckBuilder.AddCardsManually();
-        wait.Until(driver => Royale.Pages.Pages.DeckBuilder.Map.CopyDeckIconButton.Displayed);
+        Driver.Wait.Until(driver => Royale.Pages.Pages.DeckBuilder.Map.CopyDeckIconButton.Displayed);
 
         Royale.Pages.Pages.DeckBuilder.CopyDeckIcon();
 
         Royale.Pages.Pages.CopyDeck.ClickOnYesButton();
-        wait.Until(driver => Royale.Pages.Pages.CopyDeck.Map.CopiedMessage.Displayed);
+        Driver.Wait.Until(driver => Royale.Pages.Pages.CopyDeck.Map.CopiedMessage.Displayed);
 
         Assert.That(Royale.Pages.Pages.CopyDeck.CopiedMessageIsDisplayed);
-    } // test are failing because selectors are not correct -> verify that pls
+    } 
 
     }
 }
