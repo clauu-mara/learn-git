@@ -1,3 +1,4 @@
+using Framework.Models;
 using Framework.Selenium;
 using Framework.Services;
 using Royale.Pages;
@@ -20,11 +21,15 @@ public class CardTests
          Driver.Current.Quit();
     }
 
-    [Test]
-    public void IceSpiritIsOnCardsPageTest()
+    static IList<Card> apiCards = new ApiCardService().GetAllCards();
+    
+    [Test, Category("cards")] // i forgot about it or maybe I deleted, idk
+    [TestCaseSource("apiCards")]
+    [Parallelizable(ParallelScope.Children)]
+    public void CardOnPageTest(Card card)
     {
-        var iceSpiritCard = Royale.Pages.Pages.Cards.GoTo().GetCardByName("Ice Spirit");
-        Assert.That(iceSpiritCard.Displayed);
+        var _cardOnPage = Royale.Pages.Pages.Cards.GoTo().GetCardByName(card.Name);
+        Assert.That(_cardOnPage.Displayed);
     }
    /* [Test]
     public void IceSpiritHeadersAreCorrectOnCardDetailsPageTest()
@@ -44,17 +49,20 @@ public class CardTests
     // these are NUnit attributes
     // these tests are running one by one => we want them to run in parallel
     //refactoring -> this test method is now 2 test cases */
-     static string[] cardNames={"Ice Spirit", "Mirror"};
+
+    // we don't need it anymore since we use API cards
+     //static string[] cardNames={"Ice Spirit", "Mirror"};
 
      [Test, Category("cards")] // to can filter tests when running them
-     [TestCaseSource("cardNames")]
+     [TestCaseSource("apiCards")]
      [Parallelizable(ParallelScope.Children)]// because we have a caseSource and we split up tests to run in parallel/ concurrently
-    public void CardHeadersAreCorrectOnCardDetailsPageTest(string cardName)
+    public void CardHeadersAreCorrectOnCardDetailsPageTest(Card card)
     {
-       Royale.Pages.Pages.Cards.GoTo().GetCardByName(cardName).Click();
+       Royale.Pages.Pages.Cards.GoTo().GetCardByName(card.Name).Click();
 
        var cardOnPage = Royale.Pages.Pages.CardDetails.GetBaseCard();
-       var card = new InMemoryCardService().GetCardByName(cardName);
+       // we are passing in the card as an argument
+       //var card = new InMemoryCardService().GetCardByName(card.Name);
 
        Assert.AreEqual(card.Name,cardOnPage.Name);
        Assert.AreEqual(card.Type,cardOnPage.Type);
