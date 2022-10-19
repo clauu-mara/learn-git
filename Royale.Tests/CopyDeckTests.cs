@@ -22,16 +22,19 @@ namespace Royale.Tests
     public void UserCanCopyTheDeckTest()
     {
         //go to deck builder page
-        Driver.Current.FindElement(By.CssSelector("[href='/deckbuilder']")).Click(); // hmmm, why only using current?
+        //Driver.Current.FindElement(By.CssSelector("[href='/deckbuilder']")).Click(); // hmmm, why only using current?
+        Royale.Pages.Pages.DeckBuilder.Goto();
         //Click add cards manually
-        Driver.Current.FindElement(By.XPath("//a[text()='add cards manually']")).Click();
+        Royale.Pages.Pages.DeckBuilder.AddCardsManually();
         //click copy deck icon
-         Driver.Current.FindElement(By.CssSelector(".copyButton")).Click();
+        Royale.Pages.Pages.DeckBuilder.CopyDeckIcon();
         //click yes
-         Driver.Current.FindElement(By.CssSelector("button-open")).Click();
+        Royale.Pages.Pages.CopyDeck.ClickOnYesButton();
         //assert the if click yes message is displayed
-        var copyMessage= Driver.Current.FindElement(By.CssSelector(".notes.active"));
-        Assert.That(copyMessage.Displayed);
+
+        // I changed here, he used: Pages.CopyDeck.Map.CopiedMessage.Displayed 
+        Assert.That(Royale.Pages.Pages.CopyDeck.CopiedMessageIsDisplayed);
+        // test failed because it moves to fast so we need to use wait 
     }
 
     }
