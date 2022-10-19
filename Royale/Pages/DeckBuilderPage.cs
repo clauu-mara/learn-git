@@ -24,7 +24,7 @@ namespace Royale.Pages
         }
         public void CopyDeckIcon()
         {
-            Map.CopyDeckIcon.Click();
+            Map.CopyDeckIconButton.Click();
         }
 
     }
@@ -33,6 +33,6 @@ namespace Royale.Pages
     {
         //declaring selectors in the map class
         public IWebElement AddCardsManuallyLink => (IWebElement)Driver.FindElement(By.XPath("//a[text()='add cards manually']"));
-        public IWebElement CopyDeckIcon => Driver.Current.FindElement(By.CssSelector(".copyButton"));
+        public IWebElement CopyDeckIconButton => Driver.Current.FindElement(By.CssSelector(".copyButton"));
     }
 }

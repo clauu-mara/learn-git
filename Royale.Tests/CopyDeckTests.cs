@@ -1,5 +1,6 @@
 using Framework.Selenium;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 
 namespace Royale.Tests
 {
@@ -21,21 +22,18 @@ namespace Royale.Tests
     [Test]
     public void UserCanCopyTheDeckTest()
     {
-        //go to deck builder page
-        //Driver.Current.FindElement(By.CssSelector("[href='/deckbuilder']")).Click(); // hmmm, why only using current?
+        var wait = new WebDriverWait(Driver.Current, TimeSpan.FromSeconds(10));
         Royale.Pages.Pages.DeckBuilder.Goto();
-        //Click add cards manually
         Royale.Pages.Pages.DeckBuilder.AddCardsManually();
-        //click copy deck icon
-        Royale.Pages.Pages.DeckBuilder.CopyDeckIcon();
-        //click yes
-        Royale.Pages.Pages.CopyDeck.ClickOnYesButton();
-        //assert the if click yes message is displayed
+        wait.Until(driver => Royale.Pages.Pages.DeckBuilder.Map.CopyDeckIconButton.Displayed);
 
-        // I changed here, he used: Pages.CopyDeck.Map.CopiedMessage.Displayed 
+        Royale.Pages.Pages.DeckBuilder.CopyDeckIcon();
+
+        Royale.Pages.Pages.CopyDeck.ClickOnYesButton();
+        wait.Until(driver => Royale.Pages.Pages.CopyDeck.Map.CopiedMessage.Displayed);
+
         Assert.That(Royale.Pages.Pages.CopyDeck.CopiedMessageIsDisplayed);
-        // test failed because it moves to fast so we need to use wait 
-    }
+    } // test are failing because selectors are not correct -> verify that pls
 
     }
 }
