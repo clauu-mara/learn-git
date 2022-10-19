@@ -73,4 +73,7 @@ public class CardTests
     // 2 tests cannot run in parallel using the same instance of webdriver => using a static/global webdriver in every test is not so fun 
     // => but there is a solution: using multiple instances of webdriver being able to use it like a static driver
     // verify why my tests are not passing
+
+    //loggin for tests that run in paralle => a single directory is created using the test => race condition
+    // lock -> forces the workers to wait in line until the current worker exits the lock
 }

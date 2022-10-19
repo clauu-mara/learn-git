@@ -15,6 +15,7 @@ namespace Framework.Selenium
        
        public static void Init()
        {
+        FW.Log.Info("Browser: Chrome");
          _driver= new ChromeDriver(Path.GetFullPath(@"../../../../"+"_drivers"));
          Wait = new Wait(10);
        }
@@ -26,7 +27,12 @@ namespace Framework.Selenium
 
        public static void GoTo(string url)
        {
-         Debug.WriteLine(url);
+         if(!url.StartsWith("https"))
+         {
+           url = $"http//{url}";
+         }
+
+         FW.Log.Info(url);
          Current.Navigate().GoToUrl(url);
        }
        public static IWebDriver FindElement(By by)
@@ -40,6 +46,7 @@ namespace Framework.Selenium
 
        public static void Quit()
        {
+        FW.Log.Info("Close Browser");
         Current.Quit();
        }
     }

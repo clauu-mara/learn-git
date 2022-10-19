@@ -1,3 +1,4 @@
+using Framework;
 using Framework.Selenium;
 using OpenQA.Selenium;
 
@@ -13,19 +14,22 @@ namespace Royale.Pages
         }
         public DeckBuilderPage Goto()
         {
-          HeaderNav.Map.DeckBuilderLink.Click();   
-          Driver.Wait.Until(driver => Map.AddCardsManuallyLink.Displayed);
+          FW.Log.Step("Click Deck Builder Link");
+          HeaderNav.Map.DeckBuilderLink.Click();    
           return this; // it is returning itself 
         }
         // I am going to do methods for every selector I have 
         public void AddCardsManually()
         {
+            Driver.Wait.Until(driver => Map.AddCardsManuallyLink.Displayed);
+            FW.Log.Step("Click Add Cards Manually Link");
             //call map here
-             Map.AddCardsManuallyLink.Click(); 
-             Driver.Wait.Until(driver => Map.CopyDeckIconButton.Displayed);  
+             Map.AddCardsManuallyLink.Click();             
         }
         public void CopyDeckIcon()
         {
+            Driver.Wait.Until(driver => Map.CopyDeckIconButton.Displayed);  
+            FW.Log.Step("Click Copy Deck Icon");
             Map.CopyDeckIconButton.Click();
         }
 

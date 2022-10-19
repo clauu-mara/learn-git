@@ -1,3 +1,4 @@
+using Framework;
 using Framework.Selenium;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
@@ -6,9 +7,16 @@ namespace Royale.Tests
 {
     public class CopyDeckTests
     {
+        [OneTimeSetUp] // it is done before any of tests run to create our test results directory
+        public void BeforeAll()
+        {
+          FW.CreateTestResultsDirectory();
+        }
+
         [SetUp]
     public void BeforeEach()
     {
+        FW.SetLogger();
         Driver.Init(); //something unclear...
         Royale.Pages.Pages.Init();
         Driver.GoTo("https://statsroyale.com");
@@ -47,6 +55,7 @@ namespace Royale.Tests
         Royale.Pages.Pages.CopyDeck.ClickOnNoButton().OpenGooglePlay(); 
 
         Assert.AreEqual("Clash Royale - Apps on Google Play",Driver.Title); // here we caught a bug, because it is redirecting to the App store page
-     } // we're repeating ourselves => next chapter = logging
+     } // we're repeating ourselves => next chapter = logging 
+     //Logging is a very important strategy to programming because it helps us locate issues when we inevitably have to debug a problem.
     }
 }
