@@ -31,7 +31,7 @@ namespace Tests.Base
             }
             else if (outcome ==TestStatus.Failed)
             {
-                Driver.TakeScreenshot("test_failed";)
+                Driver.TakeScreenshot("test_failed");
                 FW.Log.Info("Outcome: Failed");
             }
             else
