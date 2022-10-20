@@ -17,7 +17,7 @@ namespace Royale.Tests
         public void BeforeEach()
         {
             FW.SetLogger();
-            Driver.Init(); //something unclear...
+            Driver.Init("Chrome"); //something unclear...
             Royale.Pages.Pages.Init();
             Driver.GoTo("https://statsroyale.com");
         }
