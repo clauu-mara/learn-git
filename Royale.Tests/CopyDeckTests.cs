@@ -2,32 +2,12 @@ using Framework;
 using Framework.Selenium;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
+using Tests.Base;
 
 namespace Royale.Tests
 {
-    public class CopyDeckTests
+    public class CopyDeckTests :TestBase
     {
-        [OneTimeSetUp] // it is done before any of tests run to create our test results directory
-        public void BeforeAll()
-        {
-            FW.SetConfig();
-            FW.CreateTestResultsDirectory();
-        }
-
-        [SetUp]
-        public void BeforeEach()
-        {
-            FW.SetLogger();
-            Driver.Init(); //something unclear...
-            Royale.Pages.Pages.Init();
-            Driver.GoTo(FW.Config.Test.Url);
-        }
-
-        [TearDown]
-        public void AfterEach()
-        {
-            Driver.Current.Quit();
-        }
         [Test, Category("copydeck")]
         public void UserCanCopyTheDeckTest()
         {

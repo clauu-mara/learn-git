@@ -34,6 +34,12 @@ namespace Framework.Selenium
             FW.Log.Info(url);
             Current.Navigate().GoToUrl(url);
         }
+        public static void TakeScreenshot(string imageName)
+        {
+          var ss = ((ITakesScreenshot)Current).GetScreenshot();
+          var ssFileName = Path.Combine(FW.CurrentTestDirectory.FullName, imageName);
+          ss.SaveAsFile($"{ssFileName}.png", ScreenshotImageFormat.Png);
+        }
         public static Element FindElement(By by, string elementName)
         {
             return new Element(Current.FindElement(by), elementName)

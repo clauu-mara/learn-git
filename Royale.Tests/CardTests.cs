@@ -3,32 +3,12 @@ using Framework.Models;
 using Framework.Selenium;
 using Framework.Services;
 using Royale.Pages;
+using Tests.Base;
 
 namespace Royale.Tests
 {
-    public class CardTests
+    public class CardTests : TestBase
     {
-        [OneTimeSetUp]
-        public void BeforeAll()
-        {
-            FW.SetConfig();
-            FW.CreateTestResultsDirectory();
-        }
-        [SetUp]
-        public void BeforeEach()
-        {
-            FW.SetLogger();
-            Driver.Init(); //something unclear...
-            Royale.Pages.Pages.Init();
-            Driver.GoTo(FW.Config.Test.Url);
-        }
-
-        [TearDown]
-        public void AfterEach()
-        {
-            Driver.Quit();
-        }
-
         static IList<Card> apiCards = new ApiCardService().GetAllCards();
 
         [Test, Category("cards")] // i forgot about it or maybe I deleted, idk
