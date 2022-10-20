@@ -49,17 +49,17 @@ namespace Royale.Pages
     public class CopyDeckPageMap
     {
         //selectors
-        public IWebElement YesButton => Driver.Current.FindElement(By.CssSelector("button-open"));
-        public IWebElement CopiedMessage => Driver.Current.FindElement(By.CssSelector(".notes.active"));
-        public IWebElement NoButton => Driver.Current.FindElement(By.Id("not-installed"));
+        public Element YesButton => Driver.FindElement(By.CssSelector("button-open"), "Yes Button");
+        public Element CopiedMessage => Driver.FindElement(By.CssSelector(".notes.active"), "Copied Message");
+        public Element NoButton => Driver.FindElement(By.Id("not-installed"), "No Button");
 
-        public IWebElement AppStoreButton => Driver.Current.FindElement(By.XPath("//a[text()='App Store']"));
+        public Element AppStoreButton => Driver.FindElement(By.XPath("//a[text()='App Store']"), "App Store Button");
 
-        public IWebElement GooglePlayButton => Driver.Current.FindElement(By.XPath("//a[text()='Google Play']"));
+        public Element GooglePlayButton => Driver.FindElement(By.XPath("//a[text()='Google Play']"), "Google Play Button");
 
-        public IWebElement CookieNotificationButton => Driver.Current.FindElement(By.CssSelector("a.cc-btn.cc-dismiss"));
+        public Element CookieNotificationButton => Driver.FindElement(By.CssSelector("a.cc-btn.cc-dismiss"), "Cookie Button");
 
-        public IWebElement OtherStoresButton => Driver.Current.FindElement(By.Id("other-stores"));
+        public Element OtherStoresButton => Driver.FindElement(By.Id("other-stores"), "Other Stores Button");
 
     }
 }

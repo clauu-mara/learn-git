@@ -33,8 +33,8 @@ namespace Royale.Pages
     public class CardDetailsPageMap
     {
         //property?
-        public IWebElement CardName => (IWebElement)Driver.FindElement(By.CssSelector("div[class*='cardName']"));
-        public IWebElement CardCategory => (IWebElement)Driver.FindElement(By.CssSelector("div[class*='card__rarity']"));
-        public IWebElement CardRarity => (IWebElement)Driver.FindElement(By.CssSelector("div[class*='card__count']"));
+        public Element CardName => Driver.FindElement(By.CssSelector("div[class*='cardName']"),"CardName");
+        public Element CardCategory => Driver.FindElement(By.CssSelector("div[class*='card__rarity']"), "Card Category");
+        public Element CardRarity => Driver.FindElement(By.CssSelector("div[class*='card__count']"), "Card Rarity");
     }
 }

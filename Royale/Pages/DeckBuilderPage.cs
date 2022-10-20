@@ -14,7 +14,7 @@ namespace Royale.Pages
         }
         public DeckBuilderPage Goto()
         {
-            FW.Log.Step("Click Deck Builder Link");
+            //FW.Log.Step("Click Deck Builder Link"); -> we remove logs because we use them in the element
             HeaderNav.Map.DeckBuilderLink.Click();
             return this; // it is returning itself 
         }
@@ -22,14 +22,12 @@ namespace Royale.Pages
         public void AddCardsManually()
         {
             Driver.Wait.Until(driver => Map.AddCardsManuallyLink.Displayed);
-            FW.Log.Step("Click Add Cards Manually Link");
             //call map here
             Map.AddCardsManuallyLink.Click();
         }
         public void CopyDeckIcon()
         {
             Driver.Wait.Until(driver => Map.CopyDeckIconButton.Displayed);
-            FW.Log.Step("Click Copy Deck Icon");
             Map.CopyDeckIconButton.Click();
         }
 
@@ -38,7 +36,7 @@ namespace Royale.Pages
     public class DeckBuilderPageMap
     {
         //declaring selectors in the map class
-        public IWebElement AddCardsManuallyLink => (IWebElement)Driver.FindElement(By.XPath("//a[text()='add cards manually']"));
-        public IWebElement CopyDeckIconButton => Driver.Current.FindElement(By.CssSelector(".copyButton"));
+        public Element AddCardsManuallyLink => Driver.FindElement(By.XPath("//a[text()='add cards manually']"), "Add Cards  Manually Link");
+        public Element CopyDeckIconButton => Driver.FindElement(By.CssSelector(".copyButton"), "Copy Deck Icon Button");
     }
 }

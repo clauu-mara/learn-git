@@ -35,13 +35,19 @@ namespace Framework.Selenium
          FW.Log.Info(url);
          Current.Navigate().GoToUrl(url);
        }
-       public static IWebElement FindElement(By by) //doamne feri ce am scris aici
+       public static Element FindElement(By by, string elementName) 
        {
-        return Current.FindElement(by);
+        return new Element(Current.FindElement(by), elementName)
+        {
+          FoundBy = by
+        };
        }
-       public static IList<IWebElement> FindElements(By by)
+       public static Elements FindElements(By by)
        {
-        return Current.FindElements(by);
+        return new Elements(Current.FindElements(by))
+        {
+          FoundBy = by
+        };
        }
 
        public static void Quit()

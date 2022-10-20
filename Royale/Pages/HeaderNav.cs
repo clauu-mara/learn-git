@@ -17,7 +17,7 @@ namespace Royale
     }
     public class HeaderNavMap
     {
-        public IWebElement CardsTabLink => (IWebElement)Driver.FindElement(By.CssSelector("a[href='/cards']"));
-        public IWebElement DeckBuilderLink => Driver.Current.FindElement(By.CssSelector("[href='/deckbuilder']"));
+        public Element CardsTabLink => Driver.FindElement(By.CssSelector("a[href='/cards']"), "Cards Tab Link");
+        public Element DeckBuilderLink => Driver.FindElement(By.CssSelector("[href='/deckbuilder']"), "Deck Builder Link");
     }
 }
