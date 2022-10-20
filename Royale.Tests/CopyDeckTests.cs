@@ -15,7 +15,7 @@ namespace Royale.Tests
             Royale.Pages.Pages.DeckBuilder.Goto().AddCardsManually();
             Royale.Pages.Pages.DeckBuilder.CopyDeckIcon();
             Royale.Pages.Pages.CopyDeck.ClickOnYesButton();
-
+            Assert.Fail();
             Assert.That(Royale.Pages.Pages.CopyDeck.CopiedMessageIsDisplayed);
         }
         [Test, Category("copydeck")]
