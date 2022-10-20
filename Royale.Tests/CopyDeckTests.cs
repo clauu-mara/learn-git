@@ -10,6 +10,7 @@ namespace Royale.Tests
         [OneTimeSetUp] // it is done before any of tests run to create our test results directory
         public void BeforeAll()
         {
+            FW.SetConfig();
             FW.CreateTestResultsDirectory();
         }
 
@@ -17,9 +18,9 @@ namespace Royale.Tests
         public void BeforeEach()
         {
             FW.SetLogger();
-            Driver.Init("Chrome"); //something unclear...
+            Driver.Init(); //something unclear...
             Royale.Pages.Pages.Init();
-            Driver.GoTo("https://statsroyale.com");
+            Driver.GoTo(FW.Config.Test.Url);
         }
 
         [TearDown]

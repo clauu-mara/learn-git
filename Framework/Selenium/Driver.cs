@@ -13,9 +13,9 @@ namespace Framework.Selenium
         [ThreadStatic]
         public static Wait Wait;
 
-        public static void Init(string browserName)
+        public static void Init()
         {
-            _driver = DriverFactory.Build(browserName);
+            _driver = DriverFactory.Build(FW.Config.Driver.Browser);
             Wait = new Wait(10);
         }
 

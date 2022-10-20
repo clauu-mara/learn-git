@@ -9,16 +9,16 @@ namespace Framework.Selenium
         public static IWebDriver Build(string browserName)
         {
             FW.Log.Info($"Browser: {browserName}");
-            switch(browserName)
+            switch (browserName)
             {
                 case "Chrome":
-                  return new ChromeDriver(FW.WORKSPACE_DIRECTORY + "_drivers");
-                
+                    return new ChromeDriver(FW.WORKSPACE_DIRECTORY + "_drivers");
+
                 case "FireFox":
-                  return new FirefoxDriver();
+                    return new FirefoxDriver();
 
                 default:
-                  throw new System.ArgumentException($"{browserName} not supported");
+                    throw new System.ArgumentException($"{browserName} not supported");
             }
         }
     }

@@ -11,6 +11,7 @@ namespace Royale.Tests
         [OneTimeSetUp]
         public void BeforeAll()
         {
+            FW.SetConfig();
             FW.CreateTestResultsDirectory();
         }
         [SetUp]
@@ -19,7 +20,7 @@ namespace Royale.Tests
             FW.SetLogger();
             Driver.Init(); //something unclear...
             Royale.Pages.Pages.Init();
-            Driver.GoTo("https://statsroyale.com");
+            Driver.GoTo(FW.Config.Test.Url);
         }
 
         [TearDown]

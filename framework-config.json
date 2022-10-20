@@ -1,3 +1,8 @@
 {
-    
+    "driver":{
+        "browser":"chrome"
+    },
+    "test":{
+        "url":"statsroyale.com"
+    }
 }

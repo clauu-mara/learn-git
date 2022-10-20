@@ -1,4 +1,5 @@
 using Framework.Logging;
+using Newtonsoft.Json;
 using NUnit.Framework;
 
 namespace Framework
@@ -8,11 +9,14 @@ namespace Framework
         public static string WORKSPACE_DIRECTORY = Path.GetFullPath(@"../../../../");
 
         public static Logger Log => _logger ?? throw new NullReferenceException(("_logger is null. SetLogger() first"));
+        public static FWConfig Config => _configuration ?? throw new NullReferenceException("Config is null. Call FW.setConfig() first");
+
         [ThreadStatic]
         public static DirectoryInfo CurrentTestDirectory;
 
         [ThreadStatic]
         private static Logger _logger;
+        private static FWConfig _configuration;
         public static DirectoryInfo CreateTestResultsDirectory()
         {
             var testDirectory = WORKSPACE_DIRECTORY + "/TestResults";
@@ -24,7 +28,14 @@ namespace Framework
         }
         // we need to add a reference to NUnit pack
         //also we have to remove prof Royale.Test the NUnit pack
-
+        public static void SetConfig()
+        {
+            if(_configuration == null)
+            {
+                var jsonString = File.ReadAllText(WORKSPACE_DIRECTORY + "/framework-config.json");
+                _configuration = JsonConvert.DeserializeObject<FWConfig>(jsonString);
+            }
+        }
         public static void SetLogger()
         {
             lock (_setLoogerLock)
