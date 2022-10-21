@@ -1,40 +1,36 @@
+using Framework.Selenium;
 using OpenQA.Selenium;
 
-namespace Royale.Pages 
+namespace Royale.Pages
 {
-   public class CardsPage: PageBase
-   {
-       public readonly CardsPageMap Map;
-       public CardsPage(IWebDriver driver):base(driver)
-       {
-         Map = new CardsPageMap(driver);
-       }
+    public class CardsPage : PageBase
+    {
+        public readonly CardsPageMap Map;
+        public CardsPage()
+        {
+            Map = new CardsPageMap();
+        }
 
-//something unclear
-       public CardsPage GoTo()
-       {
-        HeaderNav.GoToCardsPage();
-        return this;
-       }
-       public IWebElement GetCardByName(string cardName)
-       {
-            if(cardName.Contains(" "))
+        //something unclear
+        public CardsPage GoTo()
+        {
+            HeaderNav.GoToCardsPage();
+            return this;
+        }
+        public Element GetCardByName(string cardName)
+        {
+            if (cardName.Contains(" "))
             {
-               cardName = cardName.Replace(" ", "+");
+                cardName = cardName.Replace(" ", "+");
             }
             return Map.Card(cardName);
-       }
+        }
 
-   }
-   public class CardsPageMap
-   {
-     IWebDriver _driver;
-     public CardsPageMap(IWebDriver driver)
-     {
-        _driver = driver;
-     }
-     
-     public IWebElement Card(string name) => _driver.FindElement(By.CssSelector($"a[href='{name}']"));
+    }
+    public class CardsPageMap
+    {
 
-   }
+        public Element Card(string name) => Driver.FindElement(By.CssSelector($"a[href='{name}']"), $"Card: {name}");
+
+    }
 }

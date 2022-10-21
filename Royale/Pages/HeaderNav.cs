@@ -1,24 +1,23 @@
-﻿using OpenQA.Selenium;
+﻿using Framework.Selenium;
+using OpenQA.Selenium;
 
-namespace Royale;
-public class HeaderNav
+namespace Royale
 {
-    public readonly HeaderNavMap Map;
-    public HeaderNav(IWebDriver driver)
+    public class HeaderNav
     {
-        Map = new HeaderNavMap(driver);
+        public readonly HeaderNavMap Map;
+        public HeaderNav()
+        {
+            Map = new HeaderNavMap();
+        }
+        public void GoToCardsPage()
+        {
+            Map.CardsTabLink.Click();
+        }
     }
-  public void GoToCardsPage()
-  {
-     Map.CardsTabLink.Click();
-  } 
-}
-public class HeaderNavMap
-{
-    IWebDriver _driver;
-    public HeaderNavMap(IWebDriver driver)
+    public class HeaderNavMap
     {
-        _driver =driver;
+        public Element CardsTabLink => Driver.FindElement(By.CssSelector("a[href='/cards']"), "Cards Tab Link");
+        public Element DeckBuilderLink => Driver.FindElement(By.CssSelector("[href='/deckbuilder']"), "Deck Builder Link");
     }
-    public IWebElement CardsTabLink => _driver.FindElement(By.CssSelector("a[href='/cards']"));
 }

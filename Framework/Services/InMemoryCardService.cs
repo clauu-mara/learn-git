@@ -7,16 +7,16 @@ namespace Framework.Services
     {
         public Card GetCardByName(string cardName)
         {
-            switch(cardName)
+            switch (cardName)
             {
                 case "Ice Spirit":
-                return new IceSpiritCard();
+                    return new IceSpiritCard();
 
                 case "Mirror":
-                return new MirrorCard();
-                
+                    return new MirrorCard();
+
                 default:
-                throw new System.ArgumentException("Card is not available: "+ cardName);
+                    throw new System.ArgumentException("Card is not available: " + cardName);
             }
         }
     }
