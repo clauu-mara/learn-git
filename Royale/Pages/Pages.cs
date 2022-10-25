@@ -1,5 +1,3 @@
-using Framework.Selenium;
-
 namespace Royale.Pages
 {
     public static class Pages

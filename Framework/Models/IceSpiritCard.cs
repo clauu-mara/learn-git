@@ -1,4 +1,3 @@
-using System;
 namespace Framework.Models
 {
     public class IceSpiritCard : Card
