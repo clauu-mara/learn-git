@@ -1,8 +1,5 @@
-using Framework;
 using Framework.Models;
-using Framework.Selenium;
 using Framework.Services;
-using Royale.Pages;
 using Tests.Base;
 
 namespace Royale.Tests
@@ -52,10 +49,10 @@ namespace Royale.Tests
             // we are passing in the card as an argument
             //var card = new InMemoryCardService().GetCardByName(card.Name);
 
-            Assert.AreEqual(card.Name, cardOnPage.Name);
-            Assert.AreEqual(card.Type, cardOnPage.Type);
-            Assert.AreEqual(card.Arena, cardOnPage.Arena);
-            Assert.AreEqual(card.Rarity, cardOnPage.Rarity);
+            Assert.That(cardOnPage.Name, Is.EqualTo(card.Name));
+            Assert.That(cardOnPage.Type, Is.EqualTo(card.Type));
+            Assert.That(cardOnPage.Arena, Is.EqualTo(card.Arena));
+            Assert.That(cardOnPage.Rarity, Is.EqualTo(card.Rarity));
         }
         // tests are failing
         // 2 tests cannot run in parallel using the same instance of webdriver => using a static/global webdriver in every test is not so fun 
