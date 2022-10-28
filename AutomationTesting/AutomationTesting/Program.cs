@@ -19,6 +19,7 @@ secondClassVar.GetValue();
 secondClass.SetValue(-4);
 secondClass.GetValue();
 
-object audiCar = new Audi();
-((Audi)audiCar).Warning();
-((BMW)audiCar).Warning(); /// ??
+object audiCar = new BMW();
+//((Audi)audiCar).Warning();
+
+((BMW)audiCar).Warning(); 

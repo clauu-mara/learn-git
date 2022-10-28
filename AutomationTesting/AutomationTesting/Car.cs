@@ -1,17 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AutomationTesting
+﻿namespace AutomationTesting
 {
-    static class Car
+    abstract class Car
     {
-        private static int price;
-        private static string model;
+        public int Price { get; set; } = 4;
+        public string Model { get; set; } 
 
-        public static int Price { get; set; } = price;
-        public static string Model { get; set; } = model; 
+        public void CheckPrice()
+        {
+            if (Price == 0)
+            {
+                Console.WriteLine("No price");
+            }
+            else
+            {
+                Console.WriteLine("This is the price" + Price);
+            }
+        }
+
+        public string CheckPrice2()
+        {
+            return (Price == 0) ?  "No price" : "Price exists";
+        }
     }
 }

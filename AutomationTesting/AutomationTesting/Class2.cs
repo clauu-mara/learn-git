@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AutomationTesting
+﻿namespace AutomationTesting
 {
     class Class2
     {
@@ -23,7 +17,7 @@ namespace AutomationTesting
             }
             else if (myVariable < 0)
             {
-                Console.WriteLine("Variable {0} < 0 " + myVariable);
+                Console.WriteLine("Variable {0} < 0 ", myVariable);
             }
             else
             {
