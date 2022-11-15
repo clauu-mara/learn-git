@@ -20,10 +20,14 @@
 
         //why to make it static?
 
-        public Audi AudiCar(Audi result)
+        public Audi AudiCar(Audi audi)
         {
-            result = new Audi();
-            return result;
+            return new Audi
+            {
+                Model = audi.Model,
+                Color = "Audi q8",
+                Price = audi.Price
+            };
         }
 
         public object ObjectExercise()

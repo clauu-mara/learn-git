@@ -8,17 +8,14 @@
             Console.WriteLine("Alert");
         }
 
-        public void Check()
+        public override void Check()
         {
+            //TODO ternary operator
             bool testCaseState = true;
             if (testCaseState)
-            {
                 Console.WriteLine("The case PASSED");
-            }
             else
-            {
                 Console.WriteLine("The case FAILED");
-            }
         }
 
         public void WhileStatement()

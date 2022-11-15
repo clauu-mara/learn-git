@@ -2,7 +2,7 @@
 {
     public class Audi : Car 
     {
-        public string Name { get; set; }    
+        public string? Color { get; set; }    
         public void Warning()
         {
             Console.WriteLine("Error message");
@@ -24,9 +24,8 @@
             //conditional checking
             //incrementing
             for(int i = 0; i < 10; i++)
-            {
                 Console.WriteLine("The number of time is: " + i );
-            }
+
         }
     }
 }

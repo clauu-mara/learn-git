@@ -29,7 +29,7 @@ static void NewMethod()
 
     var newAudiCar = new Audi();   
     newAudiCar.Warning();
-    newAudiCar.Name = "Audi";
+    newAudiCar.Color = "Audi";
 
     //((BMW)audiCar).Warning();
 
@@ -51,7 +51,7 @@ static void NewMethod()
     Console.WriteLine(toyotaCar.ObjectExercise().GetType()); 
     Console.WriteLine(toyotaCar.DoubleTest());
     Console.WriteLine(toyotaCar.CarName());
-    Console.WriteLine(toyotaCar.CarType());
+    var audiC = toyotaCar.CarType();
 
 
     var bmw = new BMW();
