@@ -1,7 +1,8 @@
 ﻿namespace AutomationTesting
 {
-    abstract class Car
+    public abstract class Car
     {
+        public string Name { get; set; }
         public int Price { get; set; } = 4;
         public string Model { get; set; } 
 
