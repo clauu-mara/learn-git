@@ -1,4 +1,4 @@
-﻿namespace AutomationTesting
+﻿namespace AutomationTesting.Models
 {
     class Class1
     {
@@ -6,8 +6,8 @@
 
         //TODO refactoring
         public void Test2(string message)
-        { 
-            Console.WriteLine(message); 
+        {
+            Console.WriteLine(message);
         }
     }
 }

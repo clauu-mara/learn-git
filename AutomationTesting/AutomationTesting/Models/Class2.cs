@@ -1,25 +1,25 @@
-﻿namespace AutomationTesting
+﻿namespace AutomationTesting.Models
 {
     class Class2
     {
-        private int myVariable;
+        private int _myVariable;
 
         //TODO refactoring
         public void SetValue(int value)
         {
-            myVariable = value; 
+            _myVariable = value;
         }
 
         public void GetValue()
         {
             //TODO refactoring
-            if (myVariable > 0)
+            if (_myVariable > 0)
             {
-                Console.WriteLine("Variable {0} > 0 ", myVariable);
+                Console.WriteLine("Variable {0} > 0 ", _myVariable);
             }
-            else if (myVariable < 0)
+            else if (_myVariable < 0)
             {
-                Console.WriteLine("Variable {0} < 0 ", myVariable);
+                Console.WriteLine("Variable {0} < 0 ", _myVariable);
             }
             else
             {

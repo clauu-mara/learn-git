@@ -1,8 +1,10 @@
-﻿namespace AutomationTesting
+﻿namespace AutomationTesting.Models
 {
     public class BMW : Car
     {
         public string Color { get; set; }
+
+
         public void Warning()
         {
             Console.WriteLine("Alert");
@@ -11,7 +13,7 @@
         public override void Check()
         {
             //TODO ternary operator
-            bool testCaseState = true;
+            var testCaseState = true;
             if (testCaseState)
                 Console.WriteLine("The case PASSED");
             else
@@ -20,12 +22,12 @@
 
         public void WhileStatement()
         {
-            bool elementNotVisible = true;
-            int mockNoOfSeconds = 0;
-            while(elementNotVisible)
+            var elementNotVisible = true;
+            var mockNoOfSeconds = 0;
+            while (elementNotVisible)
             {
                 Console.WriteLine("No of seconds waiting:" + mockNoOfSeconds);
-                if(mockNoOfSeconds == 5)
+                if (mockNoOfSeconds == 5)
                     elementNotVisible = false;
                 mockNoOfSeconds++;
             }
