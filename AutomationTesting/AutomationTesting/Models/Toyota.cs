@@ -1,17 +1,18 @@
-﻿namespace AutomationTesting
+﻿namespace AutomationTesting.Models
 {
     public class Toyota
     {
         //method overloading
-        public int Add (int num1, int num2)
+        public int Add(int num1, int num2)
         {
-            return num1 + num2; 
+            return num1 + num2;
         }
 
         public int Add(int num1, int num2, int num3)
         {
             return num1 + num2 + num3;
         }
+
         //return types
         public string Text()
         {
@@ -32,7 +33,7 @@
 
         public object ObjectExercise()
         {
-            return new object();    
+            return new object();
         }
 
         public double DoubleTest()
@@ -54,29 +55,29 @@
 
         public void Check()
         {
-            string testCaseState = "Failed";
+            var testCaseState = "Failed";
             switch (testCaseState)
             {
                 case "Passed":
-                {
+                    {
                         Console.WriteLine("The case passed");
                         break;
-                }
+                    }
                 case "Failed":
-                {
+                    {
                         Console.WriteLine("The case failed");
                         break;
-                }
+                    }
                 case "Inconclusive":
-                {
+                    {
                         Console.WriteLine("The case inconclusive");
                         break;
-                }
+                    }
                 default:
-                {
+                    {
                         Console.WriteLine("The case is not you sent");
                         break;
-                }
+                    }
             }
         }
     }
