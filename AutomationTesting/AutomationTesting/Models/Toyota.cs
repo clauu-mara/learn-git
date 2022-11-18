@@ -1,27 +1,25 @@
 ﻿namespace AutomationTesting.Models
 {
-    public class Toyota
+    public class Toyota : Car
     {
         //method overloading
-        public int Add(int num1, int num2)
+        public static int Add(int num1, int num2)
         {
             return num1 + num2;
         }
 
-        public int Add(int num1, int num2, int num3)
+        public static int Add(int num1, int num2, int num3)
         {
             return num1 + num2 + num3;
         }
 
         //return types
-        public string Text()
+        public static string Text()
         {
             return "text";
         }
 
-        //why to make it static?
-
-        public Audi AudiCar(Audi audi)
+        public static Audi AudiCar(Audi audi)
         {
             return new Audi
             {
@@ -31,29 +29,34 @@
             };
         }
 
-        public object ObjectExercise()
+        public static object ObjectExercise()
         {
             return new object();
         }
 
-        public double DoubleTest()
+        public static double DoubleTest()
         {
             return 123.45d + 456.32211d;
         }
 
-        public string CarName()
+        public static string CarName()
         {
-            var car = new BMW();
-            return car.Name;
+            var car = new BMW
+            {
+                Color = "Blue",
+                Name = "BMW car",
+                Price = 12000,
+                Model = "I8"
+            };
+            return car.Name ;
         }
 
-        public Car CarType() // ??
+        public static Car CarType() 
         {
-            var audi = new Audi();
-            return audi;
+            return new Audi();
         }
 
-        public void Check()
+        public override void Check()
         {
             var testCaseState = "Failed";
             switch (testCaseState)

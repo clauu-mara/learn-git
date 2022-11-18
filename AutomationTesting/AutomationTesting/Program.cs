@@ -1,17 +1,11 @@
 ﻿using AutomationTesting.Models;
 
-Console.WriteLine("Hello, World!");
-
 NewMethod(); // I used refactoring
-
-
-
 
 static void NewMethod()
 {
-    var myFirstClass = new Class1();
-    myFirstClass.Test1("This is my first test");
-    myFirstClass.Test2("This is myFirstClass second test");
+    Class1.Test1("This is my first test");
+    Class1.Test2("This is myFirstClass second test");
 
     var secondClass = new Class2();
     secondClass.SetValue(3);
@@ -25,15 +19,14 @@ static void NewMethod()
     secondClass.GetValue();
 
     //explicit casting
-
-    object audiCar = new Audi();
-    ((Audi)audiCar).Warning();
+    //object audiCar = new Audi();
+    Audi.Warning();
 
     var newAudiCar = new Audi();
-    newAudiCar.Warning();
+    Audi.Warning();
     newAudiCar.Color = "Audi";
 
-    //((BMW)audiCar).Warning();
+    //((BMW)audiCar).Warning(); -> error
 
     // implicit casting-convertion
     short salary = 12344;
@@ -44,16 +37,15 @@ static void NewMethod()
     const double incomeTax = 33244.32221d;
     Console.WriteLine((int)incomeTax);//data loss
 
-    var toyotaCar = new Toyota();
-    Console.WriteLine(toyotaCar.Add(1, 3));
-    Console.WriteLine(toyotaCar.Add(1, 2, 3));
+    Console.WriteLine(Toyota.Add(1, 3));
+    Console.WriteLine(Toyota.Add(1, 2, 3));
 
-    toyotaCar.Text();
-    Console.WriteLine(toyotaCar.AudiCar(newAudiCar));
-    Console.WriteLine(toyotaCar.ObjectExercise().GetType());
-    Console.WriteLine(toyotaCar.DoubleTest());
-    Console.WriteLine(toyotaCar.CarName());
-    var audiC = toyotaCar.CarType();
+    Toyota.Text();
+    Console.WriteLine(Toyota.AudiCar(newAudiCar));
+    Console.WriteLine(Toyota.ObjectExercise().GetType());
+    Console.WriteLine(Toyota.DoubleTest());
+    Console.WriteLine(Toyota.CarName());
+    var audiC = Toyota.CarType();
 
 
     var bmw = new BMW();
@@ -65,6 +57,6 @@ static void NewMethod()
     var toyota = new Toyota();
     toyota.Check();
 
-    audi.ForStatement();
-    bmw.WhileStatement();
+    Audi.ForStatement();
+    BMW.WhileStatement();
 }

@@ -5,12 +5,12 @@
         public string? Color { get; set; }
 
 
-        public void Warning()
+        public static void Warning()
         {
             Console.WriteLine("Error message");
         }
 
-        public void Check()
+        public override void Check()
         {
             var testCaseState = "Inconclusive"; // i can delete the brackets
             if (testCaseState == "Passed")
@@ -21,7 +21,7 @@
                 Console.WriteLine("The case inconclusive");
         }
 
-        public void ForStatement()
+        public static void ForStatement()
         {
             //assigning
             //conditional checking

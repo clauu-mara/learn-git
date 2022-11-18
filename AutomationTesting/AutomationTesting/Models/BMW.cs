@@ -2,25 +2,21 @@
 {
     public class BMW : Car
     {
-        public string Color { get; set; }
+        public string? Color { get; set; }
 
 
-        public void Warning()
+        public static void Warning()
         {
             Console.WriteLine("Alert");
         }
 
-        public override void Check()
+        public static string UseTernaryOperator()
         {
-            //TODO ternary operator
             var testCaseState = true;
-            if (testCaseState)
-                Console.WriteLine("The case PASSED");
-            else
-                Console.WriteLine("The case FAILED");
+            return testCaseState == true ? "The case Passed" : "The case Failed";
         }
 
-        public void WhileStatement()
+        public static void WhileStatement()
         {
             var elementNotVisible = true;
             var mockNoOfSeconds = 0;
