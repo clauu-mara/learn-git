@@ -1,6 +1,7 @@
 ﻿using AutomationTesting.Models;
 
 NewMethod(); // I used refactoring
+Exercises();
 
 static void NewMethod()
 {
@@ -59,4 +60,12 @@ static void NewMethod()
 
     Audi.ForStatement();
     BMW.WhileStatement();
+}
+static void Exercises ()
+{
+    DataTypesExercises.ReverseChar();
+    DataTypesExercises.CheckVowels();
+    DataTypesExercises.CheckIfTwoNumbersAreEvenOrOdd();
+    DataTypesExercises.ConvertIntegerToBinaryAndHexadecimal();
+    DataTypesExercises.HexadecimalMatrix();
 }
