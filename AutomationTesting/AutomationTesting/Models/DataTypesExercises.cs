@@ -24,9 +24,9 @@ namespace AutomationTesting.Models
         public static void CheckVowels()
         {
             Console.WriteLine("Insert a letter:");
-            char letter = Convert.ToChar(Console.ReadLine());    
-            
-            switch(letter)
+            char letter = Convert.ToChar(Console.ReadLine());
+
+            switch (letter)
             {
                 case 'a':
                     Console.WriteLine("vowel");
@@ -70,11 +70,7 @@ namespace AutomationTesting.Models
 
             if (firstNumber % 2 == 0 && secondNumber % 2 == 0)
                 evenNumbers = true;
-            else if (firstNumber % 2 != 0 && secondNumber % 2 == 0)
-                evenNumbers = false;
-            else if (firstNumber % 2 == 0 && secondNumber % 2 != 0)
-                evenNumbers = false;
-            else
+            else if (firstNumber % 2 != 0 || secondNumber % 2 != 0)
                 evenNumbers = false;
 
             Console.WriteLine(evenNumbers);
