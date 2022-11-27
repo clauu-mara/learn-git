@@ -52,9 +52,8 @@ namespace AutomationTesting.Models
         //TODO 
        /* public static void CheckIfEnteredTextIsNumber()
         {
-            Console.WriteLine("Enter text:");
-            var itIsANumber = Console.ReadLine();
-            if (Convert.ToInt32(itIsANumberr)
+            Console.WriteLine("Enter something:");
+            if (Convert.ToInt32(Console.ReadLine()))
                 Console.WriteLine("It is a number");
            else
                 Console.WriteLine("It is not a number");

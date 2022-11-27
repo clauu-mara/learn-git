@@ -63,9 +63,19 @@ static void NewMethod()
 }
 static void Exercises ()
 {
-    DataTypesExercises.ReverseChar();
-    DataTypesExercises.CheckVowels();
-    DataTypesExercises.CheckIfTwoNumbersAreEvenOrOdd();
-    DataTypesExercises.ConvertIntegerToBinaryAndHexadecimal();
-    DataTypesExercises.HexadecimalMatrix();
+    //DataTypesExercises.ReverseChar();
+    //DataTypesExercises.CheckVowels();
+    DataTypesExercises.CheckIfEnteredTextIsNumber();
+    //DataTypesExercises.CheckIfTwoNumbersAreEvenOrOdd();
+    //DataTypesExercises.ConvertIntegerToBinaryAndHexadecimal();
+    //DataTypesExercises.HexadecimalMatrix();
+
+    //FlowControlExercises.OperationOnTwoNumbersIf();
+    //SFlowControlExercises.OperationOnTwoNumbersSwitch();
+    //FlowControlExercises.CheckIfNumberIsPositive();
+    //FlowControlExercises.GreatestNumber();
+    //FlowControlExercises.MultiplyNumberByTenUsingWhile();
+    //FlowControlExercises.MultiplyNumberByTenUsingDoWhile();
+    //FlowControlExercises.RangeOfNumbers();
+    //FlowControlExercises.Sum();
 }
