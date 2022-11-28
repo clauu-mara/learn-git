@@ -65,7 +65,7 @@ static void Exercises ()
 {
     //DataTypesExercises.ReverseChar();
     //DataTypesExercises.CheckVowels();
-    DataTypesExercises.CheckIfEnteredTextIsNumber();
+    //DataTypesExercises.CheckIfEnteredTextIsNumber(); TODO
     //DataTypesExercises.CheckIfTwoNumbersAreEvenOrOdd();
     //DataTypesExercises.ConvertIntegerToBinaryAndHexadecimal();
     //DataTypesExercises.HexadecimalMatrix();
@@ -78,4 +78,8 @@ static void Exercises ()
     //FlowControlExercises.MultiplyNumberByTenUsingDoWhile();
     //FlowControlExercises.RangeOfNumbers();
     //FlowControlExercises.Sum();
+    //FlowControlExercises.NumberRepeated();
+    //FlowControlExercises.AccessControl(); TODO
+    //FlowControlExercises.StudentsGarde();
+    FlowControlExercises.RepetitiveStructures();
 }
