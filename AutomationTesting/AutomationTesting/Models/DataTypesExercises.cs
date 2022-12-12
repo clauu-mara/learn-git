@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AutomationTesting.Models
+﻿namespace AutomationTesting.Models
 {
     public class DataTypesExercises
     {
@@ -24,7 +18,7 @@ namespace AutomationTesting.Models
         public static void CheckVowels()
         {
             Console.WriteLine("Insert a letter:");
-            char letter = Convert.ToChar(Console.ReadLine());
+            var letter = Convert.ToChar(Console.ReadLine());
 
             switch (letter)
             {
@@ -44,29 +38,30 @@ namespace AutomationTesting.Models
                     Console.WriteLine("vowel");
                     break;
 
-                default: Console.WriteLine("Not a vowel");
+                default:
+                    Console.WriteLine("Not a vowel");
                     break;
             }
 
         }
         //TODO 
-       /* public static void CheckIfEnteredTextIsNumber()
-        {
-            Console.WriteLine("Enter text:");
-            var itIsANumber = Console.ReadLine();
-            if (Convert.ToInt32(itIsANumberr)
-                Console.WriteLine("It is a number");
-           else
-                Console.WriteLine("It is not a number");
-        }*/
-       public static void CheckIfTwoNumbersAreEvenOrOdd()
+        /* public static void CheckIfEnteredTextIsNumber()
+         {
+             Console.WriteLine("Enter text:");
+             var itIsANumber = Console.ReadLine();
+             if (Convert.ToInt32(itIsANumberr)
+                 Console.WriteLine("It is a number");
+            else
+                 Console.WriteLine("It is not a number");
+         }*/
+        public static void CheckIfTwoNumbersAreEvenOrOdd()
         {
             Console.WriteLine("Enter two numbers");
             Console.WriteLine("Enter first number");
             var firstNumber = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Enter second number");
             var secondNumber = Convert.ToInt32(Console.ReadLine());
-            bool evenNumbers = false;
+            var evenNumbers = false;
 
             if (firstNumber % 2 == 0 && secondNumber % 2 == 0)
                 evenNumbers = true;
@@ -81,7 +76,7 @@ namespace AutomationTesting.Models
             var number = Convert.ToInt32(Console.ReadLine());
             do
             {
-                Console.WriteLine("Binary:" + Convert.ToString(number,2));
+                Console.WriteLine("Binary:" + Convert.ToString(number, 2));
                 Console.WriteLine("Hexadecimal:" + number.ToString("X"));
 
                 number = Convert.ToInt32(Console.ReadLine());
