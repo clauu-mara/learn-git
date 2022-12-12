@@ -13,12 +13,18 @@
         public override void Check()
         {
             var testCaseState = "Inconclusive"; // i can delete the brackets
-            if (testCaseState == "Passed")
-                Console.WriteLine("The case Passed");
-            else if (testCaseState == "Failed")
-                Console.WriteLine("The case Failed");
-            else if (testCaseState == "Inconclusive")
-                Console.WriteLine("The case inconclusive");
+            switch (testCaseState)
+            {
+                case "Passed":
+                    Console.WriteLine("The case Passed");
+                    break;
+                case "Failed":
+                    Console.WriteLine("The case Failed");
+                    break;
+                case "Inconclusive":
+                    Console.WriteLine("The case inconclusive");
+                    break;
+            }
         }
 
         public static void ForStatement()

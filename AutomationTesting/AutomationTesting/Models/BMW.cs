@@ -10,10 +10,9 @@
             Console.WriteLine("Alert");
         }
 
-        public static string UseTernaryOperator()
+        public static string UseTernaryOperator(bool state)
         {
-            var testCaseState = true;
-            return testCaseState == true ? "The case Passed" : "The case Failed";
+            return state ? "The case Passed" : "The case Failed";
         }
 
         public static void WhileStatement()
