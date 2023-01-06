@@ -82,7 +82,7 @@ static void Exercises ()
     //FlowControlExercises.AccessControl(); TODO
     //FlowControlExercises.StudentsGarde();
     // FlowControlExercises.RepetitiveStructures();
-    //   FlowControlExercises.CharAlphabet();
+    //FlowControlExercises.CharAlphabet();
     //FlowControlExercises.ProductOfANumber();
     //FlowControlExercises.OddNumbersInDescending();
     //FlowControlExercises.GiveChange();
