@@ -81,5 +81,11 @@ static void Exercises ()
     //FlowControlExercises.NumberRepeated();
     //FlowControlExercises.AccessControl(); TODO
     //FlowControlExercises.StudentsGarde();
-    FlowControlExercises.RepetitiveStructures();
+    // FlowControlExercises.RepetitiveStructures();
+    //   FlowControlExercises.CharAlphabet();
+    //FlowControlExercises.ProductOfANumber();
+    //FlowControlExercises.OddNumbersInDescending();
+    //FlowControlExercises.GiveChange();
+    // FlowControlExercises.ConditionalOperator();
+    FlowControlExercises.ConditionalOperatorNested();
 }

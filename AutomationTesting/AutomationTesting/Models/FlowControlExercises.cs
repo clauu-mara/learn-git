@@ -212,5 +212,119 @@
                 j++;
             } while (j <= lastNumber);
         }
+        public static void CharAlphabet()
+        {
+            for(char i='A';i<='Z';i++)
+                Console.Write(i + " ");
+        }
+
+        public static void ProductOfANumber()
+        {
+            Console.WriteLine("Enter first number:");
+            var firstNumber = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter second number:");
+            var secondNumber = Convert.ToInt32(Console.ReadLine());
+            int multiplication = 0;
+
+            int i = 0;
+            while(i < secondNumber)
+            {
+                multiplication = multiplication + firstNumber;
+                i++;
+            }
+
+            Console.Write(multiplication);
+        }
+
+        public static void OddNumbersInDescending()
+        {
+            Console.WriteLine("Enter the first number for the interval:");
+            var firstNumber = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter the last number for the interval:");
+            var lastNumber = Convert.ToInt32(Console.ReadLine());
+
+            for(int i= firstNumber;i>=lastNumber;i--)
+            {
+                if (i % 2 != 0)
+                    Console.Write(i + " ");
+            }
+        }
+
+        public static void GiveChange()
+        {
+            Console.WriteLine("Enter total amount of money you have in the cash register:");
+            var totalAmount = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Enter integer with the purchase value:");
+            var purchaseValue = Convert.ToInt32(Console.ReadLine());
+
+            var change = totalAmount - purchaseValue;
+
+            while (change >= 100)
+            {
+                Console.Write(" 100 ");
+                change -= 100;
+            }
+
+            while (change >= 50)
+            {
+                Console.Write(" 50 ");
+                change -= 50;
+            }
+
+            while (change >= 20)
+            {
+                Console.Write(" 20 ");
+                change -= 20;
+            }
+
+            while (change >= 10)
+            {
+                Console.Write(" 10 ");
+                change -= 10;
+            }
+
+            while (change >= 5)
+            {
+                Console.Write(" 5 ");
+                change -= 5;
+            }
+
+            while (change >= 2)
+            {
+                Console.Write(" 2 ");
+                change -= 2;
+            }
+
+            while (change >= 1)
+            {
+                Console.Write(" 1 ");
+                change -= 1;
+            }
+
+        }
+  
+        public static void ConditionalOperator()
+        {
+            Console.WriteLine("Enter first number:");
+            var firstNumber = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter second number:");
+            var secondNumber = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine(firstNumber > 0 ? "A is positive" : "A is not positive" );
+            Console.WriteLine(secondNumber > 0 ? "B is positive" : "B is not positive");
+            Console.WriteLine((firstNumber > secondNumber) && (secondNumber >  0 )? "Both are positive" : "Not both are positive");
+        }
+
+        public static void ConditionalOperatorNested()
+        {
+            Console.WriteLine("Enter first number:");
+            var firstNumber = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter second number:");
+            var secondNumber = Convert.ToInt32(Console.ReadLine());
+
+            int counter = (firstNumber > 0) && (secondNumber > 0) ? 2 : (firstNumber > 0) || (secondNumber > 0) ? 1 : 0;
+            Console.WriteLine(counter);
+        }
+
     }
 }
