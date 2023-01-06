@@ -63,9 +63,29 @@ static void NewMethod()
 }
 static void Exercises ()
 {
-    DataTypesExercises.ReverseChar();
-    DataTypesExercises.CheckVowels();
-    DataTypesExercises.CheckIfTwoNumbersAreEvenOrOdd();
-    DataTypesExercises.ConvertIntegerToBinaryAndHexadecimal();
-    DataTypesExercises.HexadecimalMatrix();
+    //DataTypesExercises.ReverseChar();
+    //DataTypesExercises.CheckVowels();
+    //DataTypesExercises.CheckIfEnteredTextIsNumber(); TODO
+    //DataTypesExercises.CheckIfTwoNumbersAreEvenOrOdd();
+    //DataTypesExercises.ConvertIntegerToBinaryAndHexadecimal();
+    //DataTypesExercises.HexadecimalMatrix();
+
+    //FlowControlExercises.OperationOnTwoNumbersIf();
+    //SFlowControlExercises.OperationOnTwoNumbersSwitch();
+    //FlowControlExercises.CheckIfNumberIsPositive();
+    //FlowControlExercises.GreatestNumber();
+    //FlowControlExercises.MultiplyNumberByTenUsingWhile();
+    //FlowControlExercises.MultiplyNumberByTenUsingDoWhile();
+    //FlowControlExercises.RangeOfNumbers();
+    //FlowControlExercises.Sum();
+    //FlowControlExercises.NumberRepeated();
+    //FlowControlExercises.AccessControl(); TODO
+    //FlowControlExercises.StudentsGarde();
+    // FlowControlExercises.RepetitiveStructures();
+    //FlowControlExercises.CharAlphabet();
+    //FlowControlExercises.ProductOfANumber();
+    //FlowControlExercises.OddNumbersInDescending();
+    //FlowControlExercises.GiveChange();
+    // FlowControlExercises.ConditionalOperator();
+    FlowControlExercises.ConditionalOperatorNested();
 }
