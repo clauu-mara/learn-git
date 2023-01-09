@@ -30,9 +30,6 @@ static void NewMethod()
     //((BMW)audiCar).Warning(); -> error
 
     // implicit casting-convertion
-    short salary = 12344;
-    int salaryIncrement = salary;
-    salaryIncrement = 182293273; // no data loss
 
     //explicit convertion
     const double incomeTax = 33244.32221d;
@@ -46,7 +43,7 @@ static void NewMethod()
     Console.WriteLine(Toyota.ObjectExercise().GetType());
     Console.WriteLine(Toyota.DoubleTest());
     Console.WriteLine(Toyota.CarName());
-    var audiC = Toyota.CarType();
+    Toyota.CarType();
 
 
     var bmw = new BMW();
@@ -61,7 +58,7 @@ static void NewMethod()
     Audi.ForStatement();
     BMW.WhileStatement();
 }
-static void Exercises ()
+static void Exercises()
 {
     //DataTypesExercises.ReverseChar();
     //DataTypesExercises.CheckVowels();
@@ -80,7 +77,7 @@ static void Exercises ()
     //FlowControlExercises.Sum();
     //FlowControlExercises.NumberRepeated();
     //FlowControlExercises.AccessControl(); TODO
-    //FlowControlExercises.StudentsGarde();
+    //FlowControlExercises.StudentsGrade();
     // FlowControlExercises.RepetitiveStructures();
     //FlowControlExercises.CharAlphabet();
     //FlowControlExercises.ProductOfANumber();
