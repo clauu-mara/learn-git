@@ -1,10 +1,9 @@
-﻿namespace AutomationTesting.Models
+﻿namespace AutomationTesting.Models;
+
+internal class Class1
 {
-    class Class1
-    {
-        public static void Test1(string message) => Console.WriteLine(message);
+    public static void Test1(string message) => Console.WriteLine(message);
 
-        public static void Test2(string message) => Console.WriteLine(message);
+    public static void Test2(string message) => Console.WriteLine(message);
 
-    }
 }
