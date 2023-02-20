@@ -1,7 +1,12 @@
 ﻿using AutomationTesting.Models;
+using System.Collections;
+using System.Collections.Generic;
 
-NewMethod(); // I used refactoring
-Exercises();
+//NewMethod(); // I used refactoring
+//ArraysExcercises();
+//CollectionsExercises();
+GenericCollectionsWithCustomType();
+EnumsEx();
 
 static void NewMethod()
 {
@@ -84,5 +89,123 @@ static void Exercises()
     //FlowControlExercises.OddNumbersInDescending();
     //FlowControlExercises.GiveChange();
     // FlowControlExercises.ConditionalOperator();
-    FlowControlExercises.ConditionalOperatorNested();
+    //FlowControlExercises.ConditionalOperatorNested();
 }
+
+static void ArraysExcercises()
+{
+    int[] testCaseId = new int[] { 100, 101, 102, 103, 104 };
+    string[] testNames = new string[] {"Login", "UserForm", "Slenium", "Hover" };
+    
+    //getting data from array
+    foreach (var getTestName in testNames)
+    {
+        Console.WriteLine("The test name is " + getTestName);
+    }
+
+    for(int i = 0; i<testCaseId.Length; i++)
+    {
+        Console.WriteLine(testCaseId[i]);
+    }
+
+    // not only for strings
+    foreach (var id in testCaseId)
+    {
+        Console.WriteLine(id);
+    }
+}
+
+static void CollectionsExercises()
+{
+    // non-generic collections : ArrayList, Hashtable
+
+    Hashtable table = new Hashtable();
+    table.Add("UserName", "ea");
+    table.Add("Password", "ea123");
+    table.Add("Button", "submit");
+
+    Console.WriteLine("The Username is : " + table["UserName"]);
+
+    foreach (var key in table.Keys)
+    {
+        Console.WriteLine("The value for " + key + " is : " + table[key]);
+
+    }
+
+        //types of generic <> collections: List<>, Dictionary<Tkey, Tvalue>, Stack<T>
+        // generics??
+
+        string[] user1 = new string[] { "Clau", "24", "clau@yahoo.com", "08297327873" };
+        string[] user2 = new string[] { "Sam", "30", "sam@yahoo.com", "327834443" };
+        string[] user3 = new string[] { "Jacob", "20", "jacob@yahoo.com", "7332322463" };
+
+        // Dictionary<Key, values>
+        Dictionary<int, string[]> dict = new Dictionary<int, string[]>();
+        dict.Add(1, user1);
+        dict.Add(2, user2); 
+        dict.Add(3, user3);
+
+        foreach(var value in dict)
+        {
+            string[] userInfos = value.Value;
+
+            foreach(var user in userInfos) 
+            {
+                Console.WriteLine(user);
+            }
+        }
+}
+
+static void GenericCollectionsWithCustomType()
+{
+    // dc la dictionary nu putem folosu custom types of generic data?
+    List<Users> users = new List<Users>();
+    users.Add(new Users { UserId = 1, UserName = "Clau", Age = 24, Email = "clauu@yahoo.com", Phone = 18398233});
+    users.Add(new Users { UserId = 2, UserName = "Sam", Age = 30, Email = "sam@yahoo.com", Phone = 325667753354 });
+    users.Add(new Users { UserId = 3, UserName = "Jacob", Age = 20, Email = "jacob@yahoo.com", Phone = 9327482784 });
+
+    //or I can use this format
+    List<Users> usersNew = new List<Users>()
+    {
+        new Users
+        {
+            UserId =  1,
+            UserName= "Clau",
+            Age = 24,
+            Email = "clauu@yahoo.com",
+            Phone = 3921732187
+        },
+        new Users
+        {
+            UserId = 2,
+
+        }
+    };
+
+    foreach (var user in users)
+    {
+        Console.WriteLine(String.Format("The user {0} with Age {1} has Email {2} and Phone {3}", user.UserName, user.Age, user.Email, user.Phone));
+    }
+
+}
+ static void EnumsEx()
+{
+    //enum keyword is used to declare an enumeration, a distinct type that consists of a set of named constants called the enumerator list
+    // distinct types?
+    // can be created at the class lever or the namespace level
+
+    //Console.WriteLine(GetBrowserName("Firefox"));// not strongly-typed code
+    Console.WriteLine(BrowserClass.GetBrowserName(Browser.Safari));
+}
+
+static string GetBrowserName(string browser)
+{
+    if (browser == "firefox")
+        return "firefox is opened";
+    else if (browser == "chrome")
+        return "chrome is opened";
+    else
+        return "IE is opened";
+}
+
+//TO DO: refactoring
