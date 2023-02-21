@@ -1,6 +1,9 @@
-﻿using System;
+﻿using EnumsNET;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -11,21 +14,28 @@ namespace AutomationTesting.Models
         Chrome, 
         IE,
         Firefox,
-        Safari
+        Safari,
+        [Description("Internet Explorer")]
+        InternetExplorer
     }
 
     public class BrowserClass
     {
-         public static string GetBrowserName(Browser browser)
+        public static string GetBrowserName(Browser browser)
         {
+            var description = ((Browser)4).AsString(EnumFormat.Description);
+
             if (browser == Browser.Firefox)
                 return "firefox is opened";
             else if (browser == Browser.Chrome)
                 return "chrome is opened";
             else if (browser == Browser.IE)
                 return "IE is opened";
+            else if (browser == Browser.InternetExplorer)
+                return description;
             else
                 return "Safari is opened";
+
         }
     }
 }

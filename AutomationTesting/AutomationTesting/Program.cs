@@ -1,4 +1,6 @@
-﻿using AutomationTesting.Models;
+﻿using AutomationTesting.Browsers;
+using AutomationTesting.Models;
+using AutomationTesting.Selenium;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -159,6 +161,7 @@ static void CollectionsExercises()
 static void GenericCollectionsWithCustomType()
 {
     // dc la dictionary nu putem folosu custom types of generic data?
+    //mai usor de manipulat
     List<Users> users = new List<Users>();
     users.Add(new Users { UserId = 1, UserName = "Clau", Age = 24, Email = "clauu@yahoo.com", Phone = 18398233});
     users.Add(new Users { UserId = 2, UserName = "Sam", Age = 30, Email = "sam@yahoo.com", Phone = 325667753354 });
@@ -195,7 +198,7 @@ static void GenericCollectionsWithCustomType()
     // can be created at the class lever or the namespace level
 
     //Console.WriteLine(GetBrowserName("Firefox"));// not strongly-typed code
-    Console.WriteLine(BrowserClass.GetBrowserName(Browser.Safari));
+    Console.WriteLine(BrowserClass.GetBrowserName(Browser.InternetExplorer));
 }
 
 static string GetBrowserName(string browser)
@@ -209,3 +212,14 @@ static string GetBrowserName(string browser)
 }
 
 //TO DO: refactoring
+
+//interface contains only the signature or declaration of methods/properties,
+//but its actual implementation sits on the class where the interface is implemented
+//since c# doesn't support multiple inheritance via classes, you can use multiple interfaces to implement and get the same behavior
+//IWebDriver (from Selenium)  
+
+static void UseInterfacesExercises()
+{
+    WebDriver driver = new Chrome();
+    ((Chrome)driver).FindElement();
+}
