@@ -3,12 +3,15 @@ using AutomationTesting.Models;
 using AutomationTesting.Selenium;
 using System.Collections;
 using System.Collections.Generic;
+using AutomationTesting.ExtensionMethod;
 
 //NewMethod(); // I used refactoring
 //ArraysExcercises();
 //CollectionsExercises();
-GenericCollectionsWithCustomType();
-EnumsEx();
+//GenericCollectionsWithCustomType();
+//EnumsEx();
+UseInterfacesExercises();
+UseExtensionMethods();
 
 static void NewMethod()
 {
@@ -220,6 +223,18 @@ static string GetBrowserName(string browser)
 
 static void UseInterfacesExercises()
 {
-    WebDriver driver = new Chrome();
-    ((Chrome)driver).FindElement();
+    // WebDriver driver = new Chrome();
+    // ((Chrome)driver).FindElement();
+    IWebDriver driver = new Chrome();
+        driver.FindElement();
+}
+
+// enable you to 'add' methods to existing types without creating a new derived type, recompiling
+// or otherwise modifying the original type
+// a special kind of static method, but they are called as if they were instance methods on the extended type
+//=LINQ
+static void UseExtensionMethods()
+{
+    IWebDriver driver = new Chrome();
+    driver.SendKeysWithSpecialChar("TEST", "**!!");
 }

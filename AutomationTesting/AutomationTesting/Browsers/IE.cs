@@ -19,9 +19,9 @@ namespace AutomationTesting.Browsers
             Console.WriteLine("Click the element in IE");
         }
 
-        public void SendKeys()
+        public void SendKeys(string keys)
         {
-            Console.WriteLine("Send the text");
+            Console.WriteLine("Send the text: " + keys);
         }
     }
 }
