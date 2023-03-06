@@ -10,8 +10,24 @@ using AutomationTesting.ExtensionMethod;
 //CollectionsExercises();
 //GenericCollectionsWithCustomType();
 //EnumsEx();
-UseInterfacesExercises();
-UseExtensionMethods();
+
+//UseInterfacesExercises();
+//UseExtensionMethods();
+
+//ArrayExercises.DisplayArrayInReversOrder();
+//ArrayExercises.SearchForEvenNumbers();
+//ArrayExercises.ArithmeticMeanOfThePositiveAndNegativeNumbers();
+//ArrayExercises.BubbleSortMethod();
+
+//FunctionsExercises.GreetingFunction("Claudia");
+//FunctionsExercises.FarewellFunction();
+//FunctionsExercises.CountSpaces("Hello, how are you?");
+//FunctionsExercises.Sum();
+//Console.WriteLine("Enter value: ");
+//int number = Convert.ToInt32(Console.ReadLine());
+//Console.WriteLine(FunctionsExercises.Double(number));
+
+
 
 static void NewMethod()
 {
