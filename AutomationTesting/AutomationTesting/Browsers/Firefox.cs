@@ -21,7 +21,7 @@ namespace AutomationTesting.Browsers
 
         public void SendKeys(string keys)
         {
-            Console.WriteLine("Send the text: " + keys);
+           // Console.WriteLine("Send the text: " + keys);
         }
     }
 }

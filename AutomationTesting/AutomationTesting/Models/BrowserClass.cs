@@ -23,7 +23,7 @@ namespace AutomationTesting.Models
     {
         public static string GetBrowserName(Browser browser)
         {
-            var description = ((Browser)4).AsString(EnumFormat.Description);
+            var description = (browser).AsString(EnumFormat.Description);
 
             if (browser == Browser.Firefox)
                 return "firefox is opened";

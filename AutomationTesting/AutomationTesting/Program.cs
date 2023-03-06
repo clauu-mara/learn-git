@@ -11,15 +11,15 @@ using AutomationTesting.ExtensionMethod;
 //GenericCollectionsWithCustomType();
 //EnumsEx();
 
-//UseInterfacesExercises();
+//UseInterfacesExercises(); // unde as putea folosi interfete pe NSI?
 //UseExtensionMethods();
 
-//ArrayExercises.DisplayArrayInReversOrder();
+ArrayExercises.DisplayArrayInReversOrder();
 //ArrayExercises.SearchForEvenNumbers();
 //ArrayExercises.ArithmeticMeanOfThePositiveAndNegativeNumbers();
 //ArrayExercises.BubbleSortMethod();
 
-//FunctionsExercises.GreetingFunction("Claudia");
+FunctionsExercises.GreetingFunction("Claudia");
 //FunctionsExercises.FarewellFunction();
 //FunctionsExercises.CountSpaces("Hello, how are you?");
 //FunctionsExercises.Sum();

@@ -15,5 +15,6 @@ namespace AutomationTesting.ExtensionMethod
             driver.SendKeys(keys);
             driver.SendKeys(specialChar);
         }
+        //pt string -  sa stearga cateva caractere speciale din string /int sa covertesc in double
     }
 }
