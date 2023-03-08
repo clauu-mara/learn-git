@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AutomationTesting.Models
+﻿namespace AutomationTesting.Models
 {
     public class FunctionsExercises
     {
@@ -23,7 +16,7 @@ namespace AutomationTesting.Models
             
             for (int i = 0; i <= text.Length -1; i++)
             {
-                var letter = text.Substring(i, 1);
+                var letter = text.Substring(i, 1); // used to check every char from the string
 
                 if (letter.Equals(" "))
                     counter++;
@@ -35,8 +28,9 @@ namespace AutomationTesting.Models
        {
             int[] integerArray = new int[5];
             int sum = 0;
+
             Console.WriteLine("Enter 5 integers: ");
-            for (int i = 0; i <= 4; i++)
+            for (int i = 0; i <= integerArray.Length - 1; i++)
             {
                 integerArray[i] = Convert.ToInt32(Console.ReadLine());
             }

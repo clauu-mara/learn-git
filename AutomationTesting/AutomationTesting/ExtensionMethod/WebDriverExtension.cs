@@ -1,9 +1,4 @@
 ﻿using AutomationTesting.Selenium;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AutomationTesting.ExtensionMethod
 {
@@ -15,6 +10,13 @@ namespace AutomationTesting.ExtensionMethod
             driver.SendKeys(keys);
             driver.SendKeys(specialChar);
         }
-        //pt string -  sa stearga cateva caractere speciale din string /int sa covertesc in double
+
+        //convert int to double
+        public static void ConvertIntToDouble(this int integers) // think more about it
+        {
+            Console.WriteLine(Convert.ToDouble(integers));
+        }
+        
+        //TO DO: string - delete special characters 
     }
 }

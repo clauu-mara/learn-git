@@ -1,9 +1,4 @@
 ﻿using AutomationTesting.Selenium;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AutomationTesting.Browsers
 {
@@ -19,9 +14,7 @@ namespace AutomationTesting.Browsers
             Console.WriteLine("Click the element in Firefox");
         }
 
-        public void SendKeys(string keys)
-        {
-           // Console.WriteLine("Send the text: " + keys);
-        }
+        public void SendKeys(string keys) { }
+
     }
 }

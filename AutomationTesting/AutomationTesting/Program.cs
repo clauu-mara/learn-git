@@ -2,8 +2,9 @@
 using AutomationTesting.Models;
 using AutomationTesting.Selenium;
 using System.Collections;
-using System.Collections.Generic;
 using AutomationTesting.ExtensionMethod;
+
+//METHOD CALLS:
 
 //NewMethod(); // I used refactoring
 //ArraysExcercises();
@@ -13,13 +14,14 @@ using AutomationTesting.ExtensionMethod;
 
 //UseInterfacesExercises(); // unde as putea folosi interfete pe NSI?
 //UseExtensionMethods();
+//ConvertIntToDoubleExtensionMethod(40000000);
 
-ArrayExercises.DisplayArrayInReversOrder();
+//ArrayExercises.DisplayArrayInReversOrder();
 //ArrayExercises.SearchForEvenNumbers();
 //ArrayExercises.ArithmeticMeanOfThePositiveAndNegativeNumbers();
 //ArrayExercises.BubbleSortMethod();
 
-FunctionsExercises.GreetingFunction("Claudia");
+//FunctionsExercises.GreetingFunction("Claudia");
 //FunctionsExercises.FarewellFunction();
 //FunctionsExercises.CountSpaces("Hello, how are you?");
 //FunctionsExercises.Sum();
@@ -28,6 +30,7 @@ FunctionsExercises.GreetingFunction("Claudia");
 //Console.WriteLine(FunctionsExercises.Double(number));
 
 
+//METHOD DECLARATION + IMPLEMENTATION
 
 static void NewMethod()
 {
@@ -230,8 +233,6 @@ static string GetBrowserName(string browser)
         return "IE is opened";
 }
 
-//TO DO: refactoring
-
 //interface contains only the signature or declaration of methods/properties,
 //but its actual implementation sits on the class where the interface is implemented
 //since c# doesn't support multiple inheritance via classes, you can use multiple interfaces to implement and get the same behavior
@@ -253,4 +254,9 @@ static void UseExtensionMethods()
 {
     IWebDriver driver = new Chrome();
     driver.SendKeysWithSpecialChar("TEST", "**!!");
+}
+
+static void ConvertIntToDoubleExtensionMethod(int number)
+{
+    number.ConvertIntToDouble();
 }

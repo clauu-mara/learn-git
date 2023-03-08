@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AutomationTesting.Models
+﻿namespace AutomationTesting.Models
 {
     public class ArrayExercises
     {
@@ -19,35 +13,32 @@ namespace AutomationTesting.Models
 
                 for (int i = integerArray.Length - 1; i >= 0; i--)
                 {
-                    Console.Write(integerArray[i] + " ");
+                    Console.Write(integerArray[i] + " "); // check - maybe there is a method that I can use for that
                 }
             }
 
             public static void SearchForEvenNumbers()
             {
-                int lenghtOfTheArray = 10;
-                int[] integerArray = new int[lenghtOfTheArray];
+                int[] integerArray = new int[10];
                 Console.WriteLine("Enter 10 integers: ");
-                for (int i = 0; i <= lenghtOfTheArray - 1; i++)
+                for (int i = 0; i <= integerArray.Length - 1; i++)
                 {
                     integerArray[i] = Convert.ToInt32(Console.ReadLine());
                 }
 
-                for(int i=0; i<= integerArray.Length-1; i++)
+                for(int i = 0; i <= integerArray.Length - 1; i++)
                 {
                     if (integerArray[i] % 2 == 0)
                         Console.Write(integerArray[i] + " ");
-
                 }
             }
 
             public static void ArithmeticMeanOfThePositiveAndNegativeNumbers()
              {
-                 int lenghtOfTheArray = 10;
-                 int[] integerArray = new int[lenghtOfTheArray];
+                 int[] integerArray = new int[10];
 
                  Console.WriteLine("Enter 10 integers: ");
-                 for (int i = 0; i <= lenghtOfTheArray - 1; i++)
+                 for (int i = 0; i <= integerArray.Length - 1; i++)
                  {
                      integerArray[i] = Convert.ToInt32(Console.ReadLine());
                  }
@@ -70,27 +61,24 @@ namespace AutomationTesting.Models
                      }
                  }
 
-                 var positiveAverage = positiveNumbers / lengthP;
-                 var negativeAverage = negativeNumbers / lengthN;
-                 Console.WriteLine("Average for positive numbers: " + positiveAverage);
-                 Console.WriteLine("Average for negative numbers: " + negativeAverage);
+                 Console.WriteLine("Average for positive numbers: " + positiveNumbers / lengthP);
+                 Console.WriteLine("Average for negative numbers: " + negativeNumbers / lengthN);
              }
             public static void BubbleSortMethod()
             {
-                int lenghtOfTheArray = 10;
-                int[] integerArray = new int[lenghtOfTheArray];
+                int[] integerArray = new int[10];
 
                 Console.WriteLine("Enter 10 integers: ");
-                for (int i = 0; i <= lenghtOfTheArray - 1; i++)
+                for (int i = 0; i <= integerArray.Length - 1; i++)
                 {
                     integerArray[i] = Convert.ToInt32(Console.ReadLine());
                 }
 
                 int aux = 0;
 
-                for (int i = 0; i < lenghtOfTheArray - 1; i++)
+                for (int i = 0; i < integerArray.Length - 1; i++)
                 {
-                    for (int j = i + 1; j < lenghtOfTheArray; j++)
+                    for (int j = i + 1; j < integerArray.Length; j++)
                         if (integerArray[i] > integerArray[j])
                         {
                             aux = integerArray[i];
@@ -100,7 +88,7 @@ namespace AutomationTesting.Models
                 }
 
                 Console.WriteLine("The array is: ");
-                for (int i = 0; i < lenghtOfTheArray; i++)
+                for (int i = 0; i < integerArray.Length; i++)
                     Console.Write(integerArray[i] + " ");
             }
     }

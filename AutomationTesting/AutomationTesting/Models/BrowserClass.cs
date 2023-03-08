@@ -1,15 +1,9 @@
 ﻿using EnumsNET;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AutomationTesting.Models
 {
-    public enum Browser // era privat enum-ul si de aceea imi genera erori la build
+    public enum Browser // should be public
     {
         Chrome, 
         IE,
