@@ -9,7 +9,7 @@ using AutomationTesting.ExtensionMethod;
 //NewMethod(); // I used refactoring
 //ArraysExcercises();
 //CollectionsExercises();
-//GenericCollectionsWithCustomType();
+GenericCollectionsWithCustomType();
 //EnumsEx();
 
 //UseInterfacesExercises(); // unde as putea folosi interfete pe NSI?
@@ -211,13 +211,29 @@ static void GenericCollectionsWithCustomType()
         }
     };
 
-    foreach (var user in users)
+    /*foreach (var user in users)
     {
-        Console.WriteLine(String.Format("The user {0} with Age {1} has Email {2} and Phone {3}", user.UserName, user.Age, user.Email, user.Phone));
-    }
+        Console.WriteLine(String.Format("The user {0}", user.UserName));
+    }*/
 
+    //var quserlist = from user in users select user.UserName;
+    //foreach (var user in quserlist)
+    // Console.WriteLine(user);
+
+    //var qulist = from user in users where user.Age  == 24 select user;
+
+    // foreach (var user in qulist)
+    //   Console.WriteLine(user.UserName);
+
+    //  var muserList = users.Select(x => x.UserName);
+    //  foreach (var user in muserList)
+    //    Console.WriteLine(user);
+
+    var mulist = users.Where(x => x.Age == 24).Select(x => x);
+    foreach (var user in mulist)
+        Console.WriteLine(user.UserName);
 }
- static void EnumsEx()
+static void EnumsEx()
 {
     //enum keyword is used to declare an enumeration, a distinct type that consists of a set of named constants called the enumerator list
     // distinct types?
