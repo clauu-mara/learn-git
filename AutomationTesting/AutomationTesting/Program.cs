@@ -29,6 +29,10 @@ using AutomationTesting.ExtensionMethod;
 //int number = Convert.ToInt32(Console.ReadLine());
 //Console.WriteLine(FunctionsExercises.Double(number));
 
+//ArrayListOfObjects();
+//QueueWithArrays();
+//QueueOfObjects();
+
 
 //METHOD DECLARATION + IMPLEMENTATION
 
@@ -260,3 +264,61 @@ static void ConvertIntToDoubleExtensionMethod(int number)
 {
     number.ConvertIntToDouble();
 }
+static void ArrayListOfObjects()
+{
+    ArrayList persons = new ArrayList();
+
+    Console.WriteLine("Enter a person:");
+    for(int i=0; i <=2; i++)
+    {
+        var name = Console.ReadLine(); 
+        var age = Convert.ToInt32(Console.ReadLine());
+
+        persons.Add(new Person
+        {
+            Name = name,
+            Age = age
+        });
+        
+    }
+    foreach (Person person in persons)
+    {
+        person.ToStringMethod();
+    }
+}
+
+static void QueueWithArrays()
+{
+    AutomationTesting.Models.Queue queue = new AutomationTesting.Models.Queue(3);
+    int number1 = 2, number2 = 3, number3 = 4;
+
+    queue.Enqueue(number1);
+    queue.Enqueue(number2);
+    queue.Enqueue(number3);
+
+    queue.Unenqueue();
+
+    //try to display the current queue
+}
+
+static void QueueOfObjects()
+{
+    System.Collections.Queue queue = new System.Collections.Queue();
+
+    Console.WriteLine("Enter a person:");
+    for (int i = 0; i <= 2; i++)
+    {
+        var name = Console.ReadLine();
+        var age = Convert.ToInt32(Console.ReadLine());
+
+        queue.Enqueue(new Person { Name = name, Age = age });
+    }
+    for (int i = 0; i <= 2; i++) 
+    {
+       Person person = (Person) queue.Dequeue();
+       person.ToStringMethod();
+    }
+
+}
+
+//TO DO : stack of arrays, stak of Objects
